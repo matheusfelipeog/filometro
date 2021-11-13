@@ -26,3 +26,9 @@ class Data():
 
         self._data = data
         self.length = data_length
+
+    def to_json(self):
+        ...
+
+    def to_csv(self):
+        ...
