@@ -47,7 +47,11 @@ class Data():
         data = APIDeOlhoNaFila.get_data()
         data_length = len(data)
 
-        self._data = data
+        postos = []
+        for d in data:
+            postos.append(Posto(**d))
+
+        self._data = postos
         self.length = data_length
 
     def to_json(self):
