@@ -2,7 +2,29 @@
 
 from copy import deepcopy
 
+from dataclasses import dataclass
+
 from .deolhonafila import APIDeOlhoNaFila
+
+
+@dataclass
+class Posto():
+    equipamento: str
+    endereco: str
+    distrito: str
+    crs: str
+    astrazeneca: str
+    coronavac: str
+    pfizer: str
+    intercambialidade: str
+    status_fila: str
+    indice_fila: str
+    data_hora: str
+    tipo_posto: str
+    id_crs: str
+    id_distrito: str
+    id_tb_unidades: str
+    id_tipo_posto: str
 
 
 class Data():
