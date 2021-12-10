@@ -10,22 +10,22 @@ from .deolhonafila import APIDeOlhoNaFila
 
 @dataclass
 class Posto():
-    equipamento: str = field(repr=False, default=None)
-    endereco: str = field(repr=False, default=None)
-    distrito: str = field(default=None)
-    crs: str = field(repr=False, default=None)
-    astrazeneca: str = field(repr=False, default=None)
-    coronavac: str = field(repr=False, default=None)
-    pfizer: str = field(repr=False, default=None)
-    intercambialidade: str = field(repr=False, default=None)
-    status_fila: str = field(default=None)
-    indice_fila: str = field(repr=False, default=None)
-    data_hora: str = field(default=None)
-    tipo_posto: str = field(repr=False, default=None)
-    id_crs: str = field(repr=False, default=None)
-    id_distrito: str = field(repr=False, default=None)
-    id_tb_unidades: str = field(repr=False, default=None)
-    id_tipo_posto: str = field(repr=False, default=None)
+    equipamento: str = field(repr=False)
+    endereco: str = field(repr=False)
+    distrito: str
+    crs: str = field(repr=False)
+    astrazeneca: str = field(repr=False)
+    coronavac: str = field(repr=False)
+    pfizer: str = field(repr=False)
+    intercambialidade: str = field(repr=False)
+    status_fila: str
+    indice_fila: str = field(repr=False)
+    data_hora: str
+    tipo_posto: str = field(repr=False)
+    id_crs: str = field(repr=False)
+    id_distrito: str = field(repr=False)
+    id_tb_unidades: str = field(repr=False)
+    id_tipo_posto: str = field(repr=False)
 
 
 class Data():
