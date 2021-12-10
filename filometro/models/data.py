@@ -2,30 +2,7 @@
 
 from copy import deepcopy
 
-from dataclasses import dataclass
-from dataclasses import field
-
 from .deolhonafila import APIDeOlhoNaFila
-
-
-@dataclass
-class Posto():
-    equipamento: str = field(repr=False)
-    endereco: str = field(repr=False)
-    distrito: str
-    crs: str = field(repr=False)
-    astrazeneca: str = field(repr=False)
-    coronavac: str = field(repr=False)
-    pfizer: str = field(repr=False)
-    intercambialidade: str = field(repr=False)
-    status_fila: str
-    indice_fila: str = field(repr=False)
-    data_hora: str
-    tipo_posto: str = field(repr=False)
-    id_crs: str = field(repr=False)
-    id_distrito: str = field(repr=False)
-    id_tb_unidades: str = field(repr=False)
-    id_tipo_posto: str = field(repr=False)
 
 
 class Data():
@@ -49,7 +26,7 @@ class Data():
 
         postos = []
         for d in data:
-            postos.append(Posto(**d))
+            postos.append(d)
 
         self._data = postos
         self.length = data_length
