@@ -20,8 +20,8 @@ class Data():
         return deepcopy(self._data)
 
     def update(self) -> None:
-
-        data = APIDeOlhoNaFila.get_data()
+        api = APIDeOlhoNaFila()
+        data = api.get_data()
         data_length = len(data)
 
         postos = []
