@@ -8,15 +8,15 @@ from dataclasses import field
 
 @dataclass
 class Posto():
-    equipamento: str = field(repr=False)
+    equipamento: str
     endereco: str = field(repr=False)
-    distrito: str
+    distrito: str = field(repr=False)
     crs: str = field(repr=False)
     astrazeneca: str = field(repr=False)
     coronavac: str = field(repr=False)
     pfizer: str = field(repr=False)
     intercambialidade: str = field(repr=False)
-    status_fila: str
+    status_fila: str = field(repr=False)
     indice_fila: str = field(repr=False)
     data_hora: str
     tipo_posto: str = field(repr=False)
