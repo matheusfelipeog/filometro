@@ -31,7 +31,6 @@ class Filometro():
         )
     
     def _postos_dicts_to_postos_objects(self, postos_dicts: list) -> list:
-        
         postos_objects = []
         for posto_dict in postos_dicts:
             posto_object = self._posto_dict_to_posto_object(posto_dict)
