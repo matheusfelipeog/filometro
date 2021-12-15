@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+from typing import List
+
 from ._deolhonafila import APIDeOlhoNaFila
 from ._deolhonafila import Posto
 
@@ -30,7 +32,7 @@ class Filometro():
             id_tipo_posto=posto_dict['id_tipo_posto']
         )
     
-    def _postos_dicts_to_postos_objects(self, postos_dicts: list) -> list:
+    def _postos_dicts_to_postos_objects(self, postos_dicts: List[dict]) -> List[Posto]:
         postos_objects = []
         for posto_dict in postos_dicts:
             posto_object = self._posto_dict_to_posto_object(posto_dict)
@@ -38,7 +40,7 @@ class Filometro():
         
         return postos_objects
 
-    def _load_postos(self) -> list:
+    def _load_postos(self) -> List[Posto]:
         postos_dicts = self._api.get_data()
         postos_objects = self._postos_dicts_to_postos_objects(postos_dicts)
         return postos_objects
