@@ -2,8 +2,8 @@
 
 from typing import List
 
-from ._deolhonafila import APIDeOlhoNaFila
-from ._deolhonafila import Posto
+from filometro.models._deolhonafila import APIDeOlhoNaFila
+from filometro.dataclasses import Posto
 
 
 class Filometro():
