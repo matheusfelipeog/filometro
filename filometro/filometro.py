@@ -34,16 +34,16 @@ class Filometro():
         return self._postos
 
     def by_zone(self, zone: Zone) -> List[Posto]:
-        return [posto for posto in self._postos if posto.crs == zone.value]
+        return [posto for posto in self._postos if posto.zone == zone.value]
 
     def by_modality(self, modality: Modality) -> List[Posto]:
-        return [posto for posto in self._postos if posto.tipo_posto == modality.value]
+        return [posto for posto in self._postos if posto.modality == modality.value]
 
     def by_district(self, district: District) -> List[Posto]:
-        return [posto for posto in self._postos if posto.distrito == district.value]
+        return [posto for posto in self._postos if posto.district == district.value]
 
     def by_situation(self, situation: Situation) -> List[Posto]:
-        return [posto for posto in self._postos if posto.status_fila == situation.value]
+        return [posto for posto in self._postos if posto.situation == situation.value]
 
     def by_immunizing(self, immunizing: Immunizing) -> List[Posto]:
         return [posto for posto in self._postos if posto.__dict__[immunizing.value] == '1']

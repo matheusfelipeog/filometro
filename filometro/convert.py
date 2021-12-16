@@ -7,23 +7,23 @@ from filometro.dataclasses import Posto
 
 def posto_dict_to_posto_object(posto_dict: dict) -> Posto:
     return Posto(
-        equipamento=posto_dict['equipamento'],
-        endereco=posto_dict['endereco'],
-        distrito=posto_dict['distrito'],
-        crs=posto_dict['crs'],
+        equipment=posto_dict['equipamento'],
+        address=posto_dict['endereco'],
+        district=posto_dict['distrito'],
+        zone=posto_dict['crs'],
         astrazeneca=posto_dict['astrazeneca'],
         coronavac=posto_dict['coronavac'],
         pfizer=posto_dict['pfizer'],
         janssen=posto_dict['janssen'],
         intercambialidade=posto_dict['intercambialidade'],
-        status_fila=posto_dict['status_fila'],
-        indice_fila=posto_dict['indice_fila'],
-        data_hora=posto_dict['data_hora'],
-        tipo_posto=posto_dict['tipo_posto'],
-        id_crs=posto_dict['id_crs'],
-        id_distrito=posto_dict['id_distrito'],
+        situation=posto_dict['status_fila'],
+        index_situation=posto_dict['indice_fila'],
+        last_update=posto_dict['data_hora'],
+        modality=posto_dict['tipo_posto'],
+        id_zone=posto_dict['id_crs'],
+        id_district=posto_dict['id_distrito'],
         id_tb_unidades=posto_dict['id_tb_unidades'],
-        id_tipo_posto=posto_dict['id_tipo_posto']
+        id_modality=posto_dict['id_tipo_posto']
     )
 
 
