@@ -10,6 +10,7 @@ from filometro import convert
 
 from filometro.enums import Zone
 from filometro.enums import Modality
+from filometro.enums import Situation
 from filometro.enums import District
 
 
@@ -39,3 +40,6 @@ class Filometro():
 
     def by_district(self, district: District) -> List[Posto]:
         return [posto for posto in self._postos if posto.distrito == district.value]
+
+    def by_situation(self, situation: Situation) -> List[Posto]:
+        return [posto for posto in self._postos if posto.status_fila == situation.value]

@@ -20,6 +20,14 @@ class Modality(Enum):
     MEGAPOSTO = 'MEGAPOSTO'
 
 
+class Situation(Enum):
+    NAO_FUNCIONANDO = 'NÃO FUNCIONANDO'
+    SEM_FILA = 'SEM FILA'
+    FILA_PEQUENA = 'FILA PEQUENA'
+    FILA_MEDIA = 'FILA MÉDIA'
+    FILA_GRANDE = 'FILA GRANDE'
+
+
 class District(Enum):
     AGUA_RASA = 'Água Rasa'
     ALTO_DE_PINHEIROS = 'Alto de Pinheiros'
