@@ -14,6 +14,7 @@ def posto_dict_to_posto_object(posto_dict: dict) -> Posto:
         astrazeneca=posto_dict['astrazeneca'],
         coronavac=posto_dict['coronavac'],
         pfizer=posto_dict['pfizer'],
+        janssen=posto_dict['janssen'],
         intercambialidade=posto_dict['intercambialidade'],
         status_fila=posto_dict['status_fila'],
         indice_fila=posto_dict['indice_fila'],

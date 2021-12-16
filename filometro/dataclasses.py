@@ -13,6 +13,7 @@ class Posto():
     astrazeneca: str = field(repr=False)
     coronavac: str = field(repr=False)
     pfizer: str = field(repr=False)
+    janssen: str = field(repr=False)
     intercambialidade: str = field(repr=False)
     status_fila: str = field(repr=False)
     indice_fila: str = field(repr=False)
