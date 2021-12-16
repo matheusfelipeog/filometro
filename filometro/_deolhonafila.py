@@ -2,6 +2,9 @@
 
 import requests
 
+from typing import List
+
+
 class APIDeOlhoNaFila():
 
     def __init__(self) -> None:
@@ -29,7 +32,7 @@ class APIDeOlhoNaFila():
             'sec-gpc': '1'
         }
 
-    def get_data(self) -> list:
+    def get_data(self) -> List[dict]:
         response = requests.post(self.endpoint, headers=self.headers, data=self.payload)
 
         response.raise_for_status()
