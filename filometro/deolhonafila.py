@@ -6,7 +6,6 @@ from typing import List
 
 
 class APIDeOlhoNaFila():
-
     def __init__(self) -> None:
         self.endpoint = 'https://deolhonafila.prefeitura.sp.gov.br/processadores/dados.php'
         self.payload = {'dados': 'dados'}
