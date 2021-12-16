@@ -16,10 +16,10 @@ class Posto():
     janssen: str = field(repr=False)
     intercambialidade: str = field(repr=False)
     situation: str = field(repr=False)           # status_fila
-    index_situation: str = field(repr=False)     # indice_fila
-    last_update: str                             # data_hora
     modality: str = field(repr=False)            # tipo_posto
-    id_zone: str = field(repr=False)             # id_crs
+    last_update: str                             # data_hora
+    index_situation: str = field(repr=False)     # indice_fila
     id_district: str = field(repr=False)         # id_distrito
+    id_zone: str = field(repr=False)             # id_crs
     id_tb_unidades: str = field(repr=False)
     id_modality: str = field(repr=False)         # id_tipo_posto

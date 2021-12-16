@@ -17,11 +17,11 @@ def posto_dict_to_posto_object(posto_dict: dict) -> Posto:
         janssen=posto_dict['janssen'],
         intercambialidade=posto_dict['intercambialidade'],
         situation=posto_dict['status_fila'],
-        index_situation=posto_dict['indice_fila'],
-        last_update=posto_dict['data_hora'],
         modality=posto_dict['tipo_posto'],
-        id_zone=posto_dict['id_crs'],
+        last_update=posto_dict['data_hora'],
+        index_situation=posto_dict['indice_fila'],
         id_district=posto_dict['id_distrito'],
+        id_zone=posto_dict['id_crs'],
         id_tb_unidades=posto_dict['id_tb_unidades'],
         id_modality=posto_dict['id_tipo_posto']
     )
