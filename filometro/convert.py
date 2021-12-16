@@ -1,5 +1,10 @@
 # -*- coding: utf-8 -*-
 
+__all__ = [
+    'posto_dict_to_posto_object',
+    'postos_dicts_to_postos_objects'
+]
+
 from typing import List
 
 from filometro.dataclasses import Posto

@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+__all__ = ['APIDeOlhoNaFila']
+
 import requests
 
 from typing import List

@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+__all__ = ['Posto']
+
 from dataclasses import dataclass
 from dataclasses import field
 

@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+__all__ = ['Filometro']
+
 from typing import List
 
 from filometro.deolhonafila import APIDeOlhoNaFila

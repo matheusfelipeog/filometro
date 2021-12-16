@@ -1,5 +1,13 @@
 # -*- coding: utf-8 -*-
 
+__all__ = [
+    'Zone',
+    'Modality',
+    'Situation',
+    'Immunizing',
+    'District'
+]
+
 from enum import Enum
 
 
