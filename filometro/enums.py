@@ -28,6 +28,14 @@ class Situation(Enum):
     FILA_GRANDE = 'FILA GRANDE'
 
 
+class Immunizing(Enum):
+    ASTRAZENECA = 'astrazeneca'
+    INTERCAMBIALIDADE = 'intercambialidade'
+    PFIZER = 'pfizer'
+    CORONAVAC = 'coronavac'
+    JANSSEN = 'janssen'
+
+
 class District(Enum):
     AGUA_RASA = 'Água Rasa'
     ALTO_DE_PINHEIROS = 'Alto de Pinheiros'

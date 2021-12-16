@@ -11,6 +11,7 @@ from filometro import convert
 from filometro.enums import Zone
 from filometro.enums import Modality
 from filometro.enums import Situation
+from filometro.enums import Immunizing
 from filometro.enums import District
 
 
@@ -43,3 +44,6 @@ class Filometro():
 
     def by_situation(self, situation: Situation) -> List[Posto]:
         return [posto for posto in self._postos if posto.status_fila == situation.value]
+
+    def by_immunizing(self, immunizing: Immunizing) -> List[Posto]:
+        return [posto for posto in self._postos if posto.__dict__[immunizing.value] == '1']
