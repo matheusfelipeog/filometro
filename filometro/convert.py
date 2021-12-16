@@ -19,11 +19,11 @@ def posto_dict_to_posto_object(posto_dict: dict) -> Posto:
         situation=posto_dict['status_fila'],
         modality=posto_dict['tipo_posto'],
         last_update=posto_dict['data_hora'],
-        index_situation=posto_dict['indice_fila'],
-        id_district=posto_dict['id_distrito'],
-        id_zone=posto_dict['id_crs'],
-        id_tb_unidades=posto_dict['id_tb_unidades'],
-        id_modality=posto_dict['id_tipo_posto']
+        _index_situation=posto_dict['indice_fila'],
+        _id_district=posto_dict['id_distrito'],
+        _id_zone=posto_dict['id_crs'],
+        _id_tb_unidades=posto_dict['id_tb_unidades'],
+        _id_modality=posto_dict['id_tipo_posto']
     )
 
 

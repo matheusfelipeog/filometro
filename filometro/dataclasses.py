@@ -18,8 +18,8 @@ class Posto():
     situation: str = field(repr=False)           # status_fila
     modality: str = field(repr=False)            # tipo_posto
     last_update: str                             # data_hora
-    index_situation: str = field(repr=False)     # indice_fila
-    id_district: str = field(repr=False)         # id_distrito
-    id_zone: str = field(repr=False)             # id_crs
-    id_tb_unidades: str = field(repr=False)
-    id_modality: str = field(repr=False)         # id_tipo_posto
+    _index_situation: str = field(repr=False)    # indice_fila
+    _id_district: str = field(repr=False)        # id_distrito
+    _id_zone: str = field(repr=False)            # id_crs
+    _id_tb_unidades: str = field(repr=False)
+    _id_modality: str = field(repr=False)        # id_tipo_posto
