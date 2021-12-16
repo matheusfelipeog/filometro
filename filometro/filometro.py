@@ -2,7 +2,7 @@
 
 from typing import List
 
-from filometro._deolhonafila import APIDeOlhoNaFila
+from filometro.deolhonafila import APIDeOlhoNaFila
 
 from filometro.dataclasses import Posto
 
