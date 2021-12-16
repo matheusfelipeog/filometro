@@ -2,11 +2,22 @@
 
 from typing import List
 
+from enum import Enum
+
 from filometro.deolhonafila import APIDeOlhoNaFila
 
 from filometro.dataclasses import Posto
 
 from filometro import convert
+
+
+class Zone(Enum):
+    SUL = 'SUL'
+    OESTE = 'OESTE'
+    NORTE = 'NORTE'
+    LESTE = 'LESTE'
+    CENTRO = 'CENTRO'
+    MEGA_DRIVES = 'MEGA-DRIVES'
 
 
 class Filometro():
