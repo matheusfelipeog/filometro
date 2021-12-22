@@ -1,4 +1,10 @@
 # -*- coding: utf-8 -*-
+"""
+filometro.enums
+---------------
+
+Fornece todas as enumerações constantes para facilitar a buscas dos dados.
+"""
 
 __all__ = [
     'Zone',
