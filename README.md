@@ -39,7 +39,7 @@
 
 Filômetro é um pacote que faz o papel de um wrapper (embrulho) do site [De Olho Na Fila](https://deolhonafila.prefeitura.sp.gov.br/), de modo a disponibilizar acesso a diversos dados sobre postos de vacinação em todo o Estado de São Paulo.
 
-Com esse pacote você tem acesso aos seguintes dados:
+Com esse pacote você tem acesso aos seguintes dados dos postos:
 
 - Equipamento
 - Endereço
