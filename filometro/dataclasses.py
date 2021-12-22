@@ -1,4 +1,10 @@
 # -*- coding: utf-8 -*-
+"""
+filometro.dataclasses
+---------------------
+
+Fornece os modelos de dados utilizados pelo pacote.
+"""
 
 __all__ = ['Posto']
 
