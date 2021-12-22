@@ -35,23 +35,37 @@ class Filometro():
         return postos_objects
 
     def reload(self) -> None:
+        """Recarregar os dados com as informações mais recentes."""
+
         postos = self._load_postos()
         self._postos = postos
 
     def all_postos(self) -> List[Posto]:
+        """Retorna os dados de todos os postos."""
+
         return self._postos
 
     def by_zone(self, zone: Zone) -> List[Posto]:
+        """Retorna os dados dos postos por zona selecionada."""
+
         return [posto for posto in self._postos if posto.zone == zone.value]
 
     def by_modality(self, modality: Modality) -> List[Posto]:
+        """Retorna os dados dos postos por modalidade selecionada."""
+
         return [posto for posto in self._postos if posto.modality == modality.value]
 
     def by_district(self, district: District) -> List[Posto]:
+        """Retorna os dados dos postos por distrito selecionado."""
+
         return [posto for posto in self._postos if posto.district == district.value]
 
     def by_situation(self, situation: Situation) -> List[Posto]:
+        """Retorna os dados dos postos por situação selecionada."""
+
         return [posto for posto in self._postos if posto.situation == situation.value]
 
     def by_immunizing(self, immunizing: Immunizing) -> List[Posto]:
+        """Retorna os dados dos postos por imunizante selecionado."""
+        
         return [posto for posto in self._postos if posto.__dict__[immunizing.value] == '1']
