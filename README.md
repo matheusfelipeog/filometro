@@ -101,6 +101,92 @@ Verifique a documentação para obter informações sobre os métodos disponíve
 
 ## Documentação
 
+Para utilizar o pacote é necessário importar a classe `Filometro` e instanciar um objeto dessa mesma classe:
+
+```python
+>>> from filometro import Filometro
+>>> filometro = Filometro()
+```
+
+Quando o objeto é instanciado ocorre a coleta dos dados no site De Olho na Fila e, quando finalizado, são armazenados na memória em um atributo de uso interno do objeto. Para obter todos os dados é aconselhado utilizar o método `all_postos`:
+
+```python
+>>> postos = filometro.all_postos()
+```
+
+Uma lista de objetos do tipo `Posto` será retornada. O objeto `Posto` contém atributos que armazenam as informações de um posto. Por exemplo, é possível verificar o endereço de um posto acessando o atributo `address`:
+
+```python
+>>> posto = postos[10]  # Obtendo o posto na posição 10 da lista de postos
+>>> posto.address
+```
+
+Também é possível obter uma lista de postos conforme um requisito de filtragem, para isso existem métodos que usam identificadores (Enumeração ou Enum para os íntimos) específicos para realizar a filtragem. Você deve importar o identificador que deseja utilizar e passar como argumento para o método de filtragem. Por exemplo, caso você queira obter uma lista de postos que estão localizados na zona Sul de São Paulo:
+
+```python
+>>> from filometro import Zone
+>>> filometro.by_zone(Zone.SUL)
+```
+
+Para atualizar os dados dos postos armazenados em memória é indicado utilizar o método `reload`:
+
+```python
+>>> filometro.reload()
+```
+
+Esse método recarrega todos os dados com as informações mais recentes disponíveis no site oficial.
+
+### Métodos da classe Filometro
+
+- `Filometro.reload(...)` - Recarregar os dados com as informações mais recentes.
+- `Filometro.all_postos` - Retorna os dados de todos os postos.
+- `Filometro.by_zone` - Retorna os dados dos postos por zona selecionada.
+- `Filometro.by_modality` - Retorna os dados dos postos por modalidade selecionada.
+- `Filometro.by_district` - Retorna os dados dos postos por distrito selecionado.
+- `Filometro.by_situation` - Retorna os dados dos postos por situação selecionada.
+- `Filometro.by_immunizing` - Retorna os dados dos postos por imunizante selecionado.
+
+### Identificadores para filtragem (Enums)
+
+Todos os Enums estão disponíveis para uso atráves da interface príncipal do pacote:
+
+```python
+>>> from filometro import Zone, Modality, District, Situation, Immunizing
+```
+
+> Para obter mais informações sobre cada um dos Enums, use as funções `dir()` ou `help()` passando um dos Enums como argumento.
+
+- `Zone` - Representa as zonas do Estado de São Paulo.
+    - `Zone.SUL`
+    - `Zone.OESTE`
+    - `Zone.NORTE`
+    - `Zone.LESTE`
+    - `Zone.CENTRO`
+    - `Zone.MEGA_DRIVES`
+
+- `Modality` - Representa a modalidade do posto de saúde.
+    - `Modality.PARQUES`
+    - `Modality.POSTO_FIXO`
+    - `Modality.POSTO_VOLANTE`
+    - `Modality.DRIVE_THRU`
+    - `Modality.MEGAPOSTO`
+
+- `District` - Representa todos os distritos do Estado de São Paulo que disponíbilizam um imunizante em seus postos de saúde. Use a função `dir(District)` ou `help(District)` para mais infomações.
+
+- `Situation` - Representa as possíveis situações das filas nos postos.
+    - `Situation.NAO_FUNCIONANDO`
+    - `Situation.SEM_FILA`
+    - `Situation.FILA_PEQUENA`
+    - `Situation.FILA_MEDIA`
+    - `Situation.FILA_GRANDE`
+
+- `Immunizing` - Representa os imunizantes disponíveis nos postos de saúde do Estado de São Paulo.
+    - `Immunizing.ASTRAZENECA`
+    - `Immunizing.INTERCAMBIALIDADE`
+    - `Immunizing.PFIZER`
+    - `Immunizing.CORONAVAC`
+    - `Immunizing.JANSSEN`
+
 
 ## Contribuições
 
