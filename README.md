@@ -55,6 +55,12 @@ As informações são exatamente as mesmas disponíveis no site oficial (De Olho
 
 ## Instalação
 
+Instale o pacote usando `pip`:
+
+```shell
+$ pip install filometro
+```
+
 
 ## Demo
 
