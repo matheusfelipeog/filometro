@@ -64,7 +64,7 @@ $ pip install filometro
 
 ## Demo
 
-Obtenha uma lista de postos que tem disponível em seu estoque o imunizante da PFizer e mostre o status da fila, o endereço e a zona em que o posto está localizado:
+Obtenha uma lista de postos que tem disponível em seu estoque o imunizante da PFizer e mostre a situação da fila, o endereço e a zona em que o posto está localizado:
 
 ```python
 >>> from filometro import Filometro
