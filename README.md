@@ -1,5 +1,5 @@
 <h1 align="center">
-    <img src="./.github/assets/images/logo.png" alt="Logo filômetro" width="100px" />
+    <img src="https://raw.githubusercontent.com/matheusfelipeog/filometro/master/.github/assets/images/logo.png" alt="Logo filômetro" width="100px" />
     <br />Filômetro
 </h1>
 
