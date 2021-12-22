@@ -1,5 +1,4 @@
-<p align="center">
-    <img src="./.github/assets/images/logo.png" alt="" width="70px" />
-</p>
-
-<h1 align="center">filometro</h1>
+<h1 align="center">
+    <img src="./.github/assets/images/logo.png" alt="Logo filômetro" width="70px" />
+    <br />Filômetro
+</h1>
