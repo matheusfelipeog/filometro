@@ -31,8 +31,11 @@
 - [O que é?](#o-que-é)
 - [Instalação](#instalação)
 - [Demo](#demo)
-- [Documenação](#documentação)
+- [Documentação](#documentação)
+   - [Métodos da classe Filometro](#métodos-da-classe-filometro)
+   - [Identificadores para filtragem (Enums)](#identificadores-para-filtragem-enumsidentificadores-para-filtragem-enums)
 - [Contribuições](#contribuições)
+- [Licença](#licença)
 
 
 ## O que é?
