@@ -64,6 +64,50 @@ $ pip install filometro
 
 ## Demo
 
+Obtenha uma lista de postos que tem disponível em seu estoque o imunizante da PFizer e mostre o status da fila, o endereço e a zona em que o posto está localizado:
+
+```python
+>>> from filometro import Filometro
+>>> from filometro import Immunizing
+
+>>> filometro = Filometro()
+
+>>> postos = filometro.by_immunizing(Immunizing.PFIZER)
+>>> postos
+[
+    Posto(equipment='UBS HUMAITÁ - DR. JOÃO DE AZEVEDO LAGE', last_update='2021-12-22 12:51:18.653'),
+    Posto(equipment='UBS NOSSA SENHORA DO BRASIL - ARMANDO DARIENZO', last_update='2021-12-22 12:51:13.160'),
+    ...  # comprimido
+    Posto(equipment='TCMSP (DRIVE-THRU E WALK)', last_update='2021-12-22 12:45:36.250'),
+    Posto(equipment='UBS SANTA CRUZ', last_update='2021-12-22 12:46:35.190')
+]
+
+>>> for posto in postos:
+...     print(f'Fila: {posto.situation}')
+...     print(f'Endereço: {posto.address}')
+...     print(f'Zona: {posto.zone}', end='\n\n')
+
+Fila: FILA PEQUENA
+Endereço: R. HUMAITÁ, 520 - BELA VISTA - CEP: 01321-010 - Tel: 3241- 1632/ 3241-1163
+Zona: CENTRO
+
+Fila: FILA MÉDIA
+Endereço: R. ALMIRANTE MARQUES LEÃO, 684 - BELA VISTA - CEP: 01330- 010 - Tel: 3284-4601/ 3541-3704        
+Zona: CENTRO
+
+...  # Comprimido
+
+Fila: SEM FILA
+Endereço: Av. Professor Ascendino Reis, 1.130 - Portão B - 50m da estação metrô AACD/Servidor (linha lilás)
+Zona: SUL
+
+Fila: FILA PEQUENA
+Endereço: Rua Santa Cruz, 1.191 - Vila Mariana
+Zona: SUL
+```
+
+Verifique a documentação para obter informações sobre os métodos disponíveis no pacote.
+
 
 ## Documentação
 
