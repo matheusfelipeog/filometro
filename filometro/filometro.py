@@ -24,6 +24,11 @@ from filometro.enums import District
 
 
 class Filometro():
+    """Filometro é a API príncipal do pacote. 
+    
+    Fornence os métodos para coletar e filtrar os dados dos postos.
+    """
+
     def __init__(self) -> None:
         self._api = APIDeOlhoNaFila()
 
