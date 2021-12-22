@@ -139,12 +139,12 @@ Esse método recarrega todos os dados com as informações mais recentes dispon�
 ### Métodos da classe Filometro
 
 - `Filometro.reload(...)` - Recarregar os dados com as informações mais recentes.
-- `Filometro.all_postos` - Retorna os dados de todos os postos.
-- `Filometro.by_zone` - Retorna os dados dos postos por zona selecionada.
-- `Filometro.by_modality` - Retorna os dados dos postos por modalidade selecionada.
-- `Filometro.by_district` - Retorna os dados dos postos por distrito selecionado.
-- `Filometro.by_situation` - Retorna os dados dos postos por situação selecionada.
-- `Filometro.by_immunizing` - Retorna os dados dos postos por imunizante selecionado.
+- `Filometro.all_postos(...)` - Retorna os dados de todos os postos.
+- `Filometro.by_zone(...)` - Retorna os dados dos postos por zona selecionada.
+- `Filometro.by_modality(...)` - Retorna os dados dos postos por modalidade selecionada.
+- `Filometro.by_district(...)` - Retorna os dados dos postos por distrito selecionado.
+- `Filometro.by_situation(...)` - Retorna os dados dos postos por situação selecionada.
+- `Filometro.by_immunizing(...)` - Retorna os dados dos postos por imunizante selecionado.
 
 ### Identificadores para filtragem (Enums)
 
@@ -164,7 +164,7 @@ Todos os Enums estão disponíveis para uso atráves da interface príncipal do 
     - `Zone.CENTRO`
     - `Zone.MEGA_DRIVES`
 
-- `Modality` - Representa a modalidade do posto de saúde.
+- `Modality` - Representa as modalidades dos postos de saúde.
     - `Modality.PARQUES`
     - `Modality.POSTO_FIXO`
     - `Modality.POSTO_VOLANTE`
@@ -173,7 +173,7 @@ Todos os Enums estão disponíveis para uso atráves da interface príncipal do 
 
 - `District` - Representa todos os distritos do Estado de São Paulo que disponíbilizam um imunizante em seus postos de saúde. Use a função `dir(District)` ou `help(District)` para mais infomações.
 
-- `Situation` - Representa as possíveis situações das filas nos postos.
+- `Situation` - Representa as possíveis situações das filas nos postos de saúde.
     - `Situation.NAO_FUNCIONANDO`
     - `Situation.SEM_FILA`
     - `Situation.FILA_PEQUENA`
