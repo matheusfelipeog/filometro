@@ -1,4 +1,12 @@
 # -*- coding: utf-8 -*-
+"""
+filometro
+---------
+
+Esse pacote fornece diversas formas de acessar, manipular e filtrar os dados
+de todos os postos de saúde que são mostrados no site 'De Olho na Fila'.
+"""
+
 
 __all__ = [
     'Zone',
