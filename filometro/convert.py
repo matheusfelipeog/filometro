@@ -1,4 +1,10 @@
 # -*- coding: utf-8 -*-
+"""
+filometro.convert
+-----------------
+
+Fornece as funções de conversão de dados utilizada no pacote.
+"""
 
 __all__ = [
     'posto_dict_to_posto_object',
