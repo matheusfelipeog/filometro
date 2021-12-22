@@ -80,7 +80,7 @@ setup(
         'covid-19', 'vacina', 'vacinasampa', 'python', 'wrapper'
     ],
     classifiers=[
-        'Development Status :: 5 - Production/Stable',
+        'Development Status :: 4 - Beta',
         'Intended Audience :: Developers',
         'Intended Audience :: Information Technology',
         'License :: OSI Approved :: MIT License',
