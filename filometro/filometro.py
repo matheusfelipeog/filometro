@@ -9,7 +9,7 @@ Fornece a API pública principal do pacote.
 __all__ = ['Filometro']
 
 from filometro import __version__
-from filometro import __author___
+from filometro import __author__
 
 from typing import List
 

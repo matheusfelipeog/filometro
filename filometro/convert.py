@@ -12,7 +12,7 @@ __all__ = [
 ]
 
 from filometro import __version__
-from filometro import __author___
+from filometro import __author__
 
 from typing import List
 
