@@ -112,9 +112,11 @@ Abaixo mostro com o que você pode contribuir:
 
 - Existe uma issue aberta e você quer resolve-la, quer implementar uma nova funcionalidade ou melhorar a documentação? Faça suas adições e me envie um *Pull Request*
 
-- Gostou do projeto, mas não quer ou ainda não consegue contribuir com ele? Considere deixar uma estrela ⭐ para o **Filometro**
+- Gostou do projeto, mas não quer ou ainda não consegue contribuir com ele? Considere deixar uma estrela ⭐ para o **Filômetro**
 
 Obrigado pelo interesse em colaborar de alguma forma com o projeto 😄
 
 
 ## Licença
+
+**Filômetro** utiliza a *licença MIT* em todo seu código, confira suas condições em [MIT License](https://github.com/matheusfelipeog/filometro/blob/master/LICENSE).
