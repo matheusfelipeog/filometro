@@ -1,4 +1,10 @@
 # -*- coding: utf-8 -*-
+"""
+filometro.deolhonafila
+----------------------
+
+Disponíbiliza formas de ter acesso aos dados do site 'De Olho na Fila'.
+"""
 
 __all__ = ['APIDeOlhoNaFila']
 
@@ -8,6 +14,8 @@ from typing import List
 
 
 class APIDeOlhoNaFila():
+    """Um wrapper da API do site 'De Olho na Fila'."""
+
     def __init__(self) -> None:
         self.endpoint = 'https://deolhonafila.prefeitura.sp.gov.br/processadores/dados.php'
         self.payload = {'dados': 'dados'}
@@ -34,6 +42,8 @@ class APIDeOlhoNaFila():
         }
 
     def get_data(self) -> List[dict]:
+        """Pegue todos os dados do site 'De Olho na Fila'."""
+
         response = requests.post(self.endpoint, headers=self.headers, data=self.payload)
 
         response.raise_for_status()
