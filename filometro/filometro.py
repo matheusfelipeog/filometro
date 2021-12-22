@@ -1,4 +1,10 @@
 # -*- coding: utf-8 -*-
+"""
+filometro.filometro
+-------------------
+
+Fornece a API pública principal do pacote.
+"""
 
 __all__ = ['Filometro']
 
