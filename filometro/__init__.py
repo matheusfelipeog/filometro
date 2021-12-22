@@ -16,6 +16,8 @@ __all__ = [
     'District',
     'Filometro'
 ]
+__version__ = '0.1.0'
+__author___ = 'Matheus Felipe <https://github.com/matheusfelipeog>'
 
 from filometro.enums import Zone
 from filometro.enums import Modality

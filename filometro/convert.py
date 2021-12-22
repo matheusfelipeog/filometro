@@ -11,6 +11,9 @@ __all__ = [
     'postos_dicts_to_postos_objects'
 ]
 
+from filometro import __version__
+from filometro import __author___
+
 from typing import List
 
 from filometro.dataclasses import Posto

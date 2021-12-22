@@ -8,6 +8,9 @@ Fornece a API pública principal do pacote.
 
 __all__ = ['Filometro']
 
+from filometro import __version__
+from filometro import __author___
+
 from typing import List
 
 from filometro.deolhonafila import APIDeOlhoNaFila

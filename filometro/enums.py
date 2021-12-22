@@ -14,6 +14,9 @@ __all__ = [
     'District'
 ]
 
+from filometro import __version__
+from filometro import __author___
+
 from enum import Enum
 
 
