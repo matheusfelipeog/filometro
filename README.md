@@ -32,6 +32,7 @@
 - [Instalação](#instalação)
 - [Demo](#demo)
 - [Documentação](#documentação)
+   - [Como utilizar?](#como-utilizar)
    - [Métodos da classe Filometro](#métodos-da-classe-filometro)
    - [Identificadores para filtragem (Enums)](#identificadores-para-filtragem-enumsidentificadores-para-filtragem-enums)
 - [Contribuições](#contribuições)
@@ -103,6 +104,10 @@ Verifique a documentação para obter informações sobre os métodos disponíve
 
 
 ## Documentação
+
+Essa é a documentação completa do pacote Filometro. Nessa seção contém o necessário para utilizar o pacote completamente.
+
+### Como utilizar?
 
 Para utilizar o pacote é necessário importar a classe `Filometro` e instanciar um objeto dessa mesma classe:
 
