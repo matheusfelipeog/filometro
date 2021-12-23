@@ -202,7 +202,7 @@ Toda contribuição é super bem-vinda!
 
 Abaixo mostro com o que você pode contribuir:
 
-- Encontrou algum bug, quer propor uma nova funcionalidade ou conversar sobre o projeto? [Abra uma Issue](https://github.com/matheusfelipeog/filometro/issues) e descreve seu caso.
+- Encontrou algum bug, quer propor uma nova funcionalidade ou conversar sobre o projeto? [Abra uma Issue](https://github.com/matheusfelipeog/filometro/issues) e descreva seu caso.
 
 - Existe uma issue aberta e você quer resolve-la, quer implementar uma nova funcionalidade ou melhorar a documentação? Faça suas adições e me envie um *Pull Request*
 
