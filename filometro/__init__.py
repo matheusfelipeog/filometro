@@ -16,7 +16,7 @@ __all__ = [
     'District',
     'Filometro'
 ]
-__version__ = '0.1.1'
+__version__ = '0.2.0'
 __author__ = 'Matheus Felipe'
 
 from filometro.enums import Zone
