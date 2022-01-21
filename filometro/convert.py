@@ -27,6 +27,7 @@ def posto_dict_to_posto_object(posto_dict: dict) -> Posto:
         zone=posto_dict['crs'],
         astrazeneca=posto_dict['astrazeneca'],
         coronavac=posto_dict['coronavac'],
+        coronavac_pediatrica=posto_dict['corona_ped'],
         pfizer=posto_dict['pfizer'],
         pfizer_pediatrica=posto_dict['pfizer_ped'],
         janssen=posto_dict['janssen'],

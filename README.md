@@ -194,6 +194,7 @@ Todos os Enums estão disponíveis para uso atráves da interface príncipal do 
     - `Immunizing.PFIZER`
     - `Immunizing.PFIZER_PEDIATRICA`
     - `Immunizing.CORONAVAC`
+    - `Immunizing.CORONAVAC_PEDIATRICA`
     - `Immunizing.JANSSEN`
     - `Immunizing.INFLUENZA`
 

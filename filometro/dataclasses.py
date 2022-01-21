@@ -23,6 +23,7 @@ class Posto():
     zone: str = field(repr=False)                # crs (Coordinate Reference Systems)
     astrazeneca: str = field(repr=False)
     coronavac: str = field(repr=False)
+    coronavac_pediatrica: str = field(repr=False)
     pfizer: str = field(repr=False)
     pfizer_pediatrica: str = field(repr=False)
     janssen: str = field(repr=False)
