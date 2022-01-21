@@ -49,6 +49,7 @@ class Immunizing(Enum):
     ASTRAZENECA = 'astrazeneca'
     INTERCAMBIALIDADE = 'intercambialidade'
     PFIZER = 'pfizer'
+    PFIZER_PEDIATRICA = 'pfizer_pediatrica'
     CORONAVAC = 'coronavac'
     JANSSEN = 'janssen'
     INFLUENZA = 'influenza'

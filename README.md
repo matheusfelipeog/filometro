@@ -192,6 +192,7 @@ Todos os Enums estão disponíveis para uso atráves da interface príncipal do 
     - `Immunizing.ASTRAZENECA`
     - `Immunizing.INTERCAMBIALIDADE`
     - `Immunizing.PFIZER`
+    - `Immunizing.PFIZER_PEDIATRICA`
     - `Immunizing.CORONAVAC`
     - `Immunizing.JANSSEN`
     - `Immunizing.INFLUENZA`
