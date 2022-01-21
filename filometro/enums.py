@@ -51,6 +51,7 @@ class Immunizing(Enum):
     PFIZER = 'pfizer'
     CORONAVAC = 'coronavac'
     JANSSEN = 'janssen'
+    INFLUENZA = 'influenza'
 
 
 class District(Enum):
