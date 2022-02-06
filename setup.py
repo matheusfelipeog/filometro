@@ -66,7 +66,8 @@ setup(
         exclude=('tests',)
     ),
     install_requires=[
-        'requests'
+        'requests',
+        'pandas'
     ],
     zip_safe=False,
     python_requires='>=3.7',
