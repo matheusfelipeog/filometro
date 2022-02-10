@@ -41,7 +41,7 @@ class Filometro():
     
     def _load_postos(self) -> List[Posto]:
         postos_dicts = self._api.get_data()
-        postos_objects = convert.postos_dicts_to_postos_objects(postos_dicts)
+        postos_objects = convert.to_postos_objects(postos_dicts)
         return postos_objects
 
     def reload(self) -> None:
