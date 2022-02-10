@@ -16,6 +16,8 @@ from filometro import __author__
 
 from typing import List
 
+from pandas import DataFrame
+
 from filometro.dataclasses import Posto
 
 
@@ -51,3 +53,8 @@ def postos_dicts_to_postos_objects(postos_dicts: List[dict]) -> List[Posto]:
         postos_objects.append(posto_object)
     
     return postos_objects
+
+
+def to_dataframe(postos: List[Posto]) -> DataFrame:
+
+        return DataFrame(postos)

@@ -13,6 +13,8 @@ from filometro import __author__
 
 from typing import List
 
+from pandas import DataFrame
+
 from filometro.deolhonafila import APIDeOlhoNaFila
 
 from filometro.dataclasses import Posto
@@ -25,7 +27,6 @@ from filometro.enums import Situation
 from filometro.enums import Immunizing
 from filometro.enums import District
 
-from pandas import DataFrame
 
 class Filometro():
     """Filometro é a API príncipal do pacote. 
@@ -54,11 +55,6 @@ class Filometro():
 
         return self._postos
 
-    def to_dataframe(self) -> DataFrame:
-        """Retorna um DataFrame contendo os dados de todos os postos"""
-
-        return DataFrame(self.all_postos())
-
     def by_zone(self, zone: Zone) -> List[Posto]:
         """Retorna os dados dos postos por zona selecionada."""
 
@@ -83,3 +79,8 @@ class Filometro():
         """Retorna os dados dos postos por imunizante selecionado."""
         
         return [posto for posto in self._postos if posto.__dict__[immunizing.value] == '1']
+    
+    def to_dataframe(self) -> DataFrame:
+        """Retorna um DataFrame contendo os dados de todos os postos."""
+
+        return convert.to_dataframe(self.all_postos())
