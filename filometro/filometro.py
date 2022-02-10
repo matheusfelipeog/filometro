@@ -80,6 +80,11 @@ class Filometro():
         
         return [posto for posto in self._postos if posto.__dict__[immunizing.value] == '1']
     
+    def to_dict(self) -> dict:
+        """Retorna uma lista de dict contendo os dados de todos os postos."""
+        
+        return convert.to_dict(self.all_postos())
+
     def to_dataframe(self) -> DataFrame:
         """Retorna um DataFrame contendo os dados de todos os postos."""
 
