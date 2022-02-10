@@ -69,4 +69,4 @@ def to_dict(postos: List[Posto]) -> List[dict]:
 
 def to_dataframe(postos: List[Posto]) -> DataFrame:
 
-        return DataFrame(postos)
+    return DataFrame(postos)
