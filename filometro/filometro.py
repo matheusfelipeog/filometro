@@ -126,12 +126,20 @@ class Filometro():
 
         return [asdict(posto) for posto in self.all_postos()]
 
-    def to_json(self) -> str:
-        """Retorna uma string json contendo os dados de todos os postos."""
+    def to_json(self, *args, **kwargs) -> str:
+        """Retorna uma string json contendo os dados de todos os postos.
+
+        Argumentos para configurar o retorno em json são aceitos:
+
+        >>> filometro.to_json(indent=4)
+
+        Consulte a documentação do pacote json para saber quais argumentos
+        são suportados.
+        """
 
         data = self.to_dict()
 
-        return json.dumps(data)
+        return json.dumps(data, *args, **kwargs)
 
     def to_dataframe(self) -> DataFrame:
         """Retorna um DataFrame contendo os dados de todos os postos."""
