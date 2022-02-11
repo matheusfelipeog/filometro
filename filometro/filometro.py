@@ -13,6 +13,8 @@ from filometro import __author__
 
 from typing import List
 
+import json
+
 from dataclasses import asdict
 
 from pandas import DataFrame
@@ -129,7 +131,9 @@ class Filometro():
     def to_json(self) -> str:
         """Retorna uma string json contendo os dados de todos os postos."""
         
-        return convert.to_json(self.all_postos())
+        data = self.to_dict()
+
+        return json.dumps(data)
 
     def to_dataframe(self) -> DataFrame:
         """Retorna um DataFrame contendo os dados de todos os postos."""
