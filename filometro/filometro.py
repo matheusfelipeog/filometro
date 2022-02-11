@@ -28,6 +28,45 @@ from filometro.enums import Immunizing
 from filometro.enums import District
 
 
+def _posto_dict_to_posto_object(posto_dict: dict) -> Posto:
+    """Converte um dict com informações de um posto em um objeto Posto."""
+
+    return Posto(
+        equipment=posto_dict['equipamento'],
+        address=posto_dict['endereco'],
+        district=posto_dict['distrito'],
+        zone=posto_dict['crs'],
+        astrazeneca=posto_dict['astrazeneca'],
+        coronavac=posto_dict['coronavac'],
+        coronavac_pediatrica=posto_dict['corona_ped'],
+        pfizer=posto_dict['pfizer'],
+        pfizer_pediatrica=posto_dict['pfizer_ped'],
+        janssen=posto_dict['janssen'],
+        influenza=posto_dict['influenza'],
+        intercambialidade=posto_dict['intercambialidade'],
+        situation=posto_dict['status_fila'],
+        modality=posto_dict['tipo_posto'],
+        last_update=posto_dict['data_hora'],
+        _index_situation=posto_dict['indice_fila'],
+        _id_district=posto_dict['id_distrito'],
+        _id_zone=posto_dict['id_crs'],
+        _id_tb_unidades=posto_dict['id_tb_unidades'],
+        _id_modality=posto_dict['id_tipo_posto']
+    )
+
+
+def _postos_dicts_to_postos_objects(postos_dicts: List[dict]) -> List[Posto]:
+    """Converte uma lista de dict com informações de vários postos em 
+    uma lista de objetos Posto."""
+
+    postos_objects = []
+    for posto_dict in postos_dicts:
+        posto_object = _posto_dict_to_posto_object(posto_dict)
+        postos_objects.append(posto_object)
+
+    return postos_objects
+
+
 class Filometro():
     """Filometro é a API príncipal do pacote. 
     
@@ -41,7 +80,7 @@ class Filometro():
     
     def _load_postos(self) -> List[Posto]:
         postos_dicts = self._api.get_data()
-        postos_objects = convert.to_postos_objects(postos_dicts)
+        postos_objects = _postos_dicts_to_postos_objects(postos_dicts)
         return postos_objects
 
     def reload(self) -> None:
