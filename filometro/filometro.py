@@ -104,6 +104,11 @@ class Filometro():
             if posto.situation != Situation.NAO_FUNCIONANDO.value
         ]
 
+    def all_postos_closed(self) -> List[Posto]:
+        """Retorna uma lista com todos os postos fechados no momento da busca."""
+
+        return self.by_situation(Situation.NAO_FUNCIONANDO)
+
     def by_zone(self, zone: Zone) -> List[Posto]:
         """Retorna os dados dos postos por zona selecionada."""
 
