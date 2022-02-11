@@ -23,8 +23,6 @@ from filometro.deolhonafila import APIDeOlhoNaFila
 
 from filometro.dataclasses import Posto
 
-from filometro import convert
-
 from filometro.enums import Zone
 from filometro.enums import Modality
 from filometro.enums import Situation
