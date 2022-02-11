@@ -15,6 +15,8 @@ from typing import List
 
 from pandas import DataFrame
 
+from dataclasses import asdict
+
 from filometro.deolhonafila import APIDeOlhoNaFila
 
 from filometro.dataclasses import Posto
@@ -119,10 +121,10 @@ class Filometro():
         
         return [posto for posto in self._postos if posto.__dict__[immunizing.value] == '1']
     
-    def to_dict(self) -> dict:
+    def to_dict(self) -> List[dict]:
         """Retorna uma lista de dict contendo os dados de todos os postos."""
         
-        return convert.to_dict(self.all_postos())
+        return [asdict(posto) for posto in self.all_postos()]
 
     def to_json(self) -> str:
         """Retorna uma string json contendo os dados de todos os postos."""
