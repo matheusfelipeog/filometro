@@ -73,7 +73,7 @@ def _postos_dicts_to_postos_objects(postos_dicts: List[dict]) -> List[Posto]:
 
 class Filometro():
     """Filometro é a API príncipal do pacote. 
-    
+
     Fornence os métodos para coletar e filtrar os dados dos postos.
     """
 
@@ -81,7 +81,7 @@ class Filometro():
         self._api = APIDeOlhoNaFila()
 
         self._postos = self._load_postos()
-    
+
     def _load_postos(self) -> List[Posto]:
         postos_dicts = self._api.get_data()
         postos_objects = _postos_dicts_to_postos_objects(postos_dicts)
@@ -120,17 +120,17 @@ class Filometro():
 
     def by_immunizing(self, immunizing: Immunizing) -> List[Posto]:
         """Retorna os dados dos postos por imunizante selecionado."""
-        
+
         return [posto for posto in self._postos if posto.__dict__[immunizing.value] == '1']
-    
+
     def to_dict(self) -> List[dict]:
         """Retorna uma lista de dict contendo os dados de todos os postos."""
-        
+
         return [asdict(posto) for posto in self.all_postos()]
 
     def to_json(self) -> str:
         """Retorna uma string json contendo os dados de todos os postos."""
-        
+
         data = self.to_dict()
 
         return json.dumps(data)
