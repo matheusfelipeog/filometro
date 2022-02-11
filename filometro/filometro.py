@@ -85,6 +85,11 @@ class Filometro():
         
         return convert.to_dict(self.all_postos())
 
+    def to_json(self) -> str:
+        """Retorna uma string json contendo os dados de todos os postos."""
+        
+        return convert.to_json(self.all_postos())
+
     def to_dataframe(self) -> DataFrame:
         """Retorna um DataFrame contendo os dados de todos os postos."""
 

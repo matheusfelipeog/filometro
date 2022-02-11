@@ -16,6 +16,8 @@ from filometro import __author__
 
 from typing import List
 
+import json
+
 from dataclasses import asdict
 
 from pandas import DataFrame
@@ -65,6 +67,13 @@ def to_postos_objects(postos_dicts: List[dict]) -> List[Posto]:
 def to_dict(postos: List[Posto]) -> List[dict]:
 
     return [asdict(posto) for posto in postos]
+
+
+def to_json(postos: List[Posto]) -> str:
+
+    data = to_dict(postos)
+
+    return json.dumps(data)
 
 
 def to_dataframe(postos: List[Posto]) -> DataFrame:
