@@ -96,6 +96,14 @@ class Filometro():
 
         return self._postos
 
+    def all_postos_open(self) -> List[Posto]:
+        """Retorna uma lista com todos os postos abertos no momento da busca."""
+
+        return [
+            posto for posto in self._postos
+            if posto.situation != Situation.NAO_FUNCIONANDO.value
+        ]
+
     def by_zone(self, zone: Zone) -> List[Posto]:
         """Retorna os dados dos postos por zona selecionada."""
 
