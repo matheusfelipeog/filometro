@@ -13,6 +13,8 @@ from filometro import __author__
 
 from typing import List
 
+from pandas import DataFrame
+
 from filometro.deolhonafila import APIDeOlhoNaFila
 
 from filometro.dataclasses import Posto
@@ -25,7 +27,6 @@ from filometro.enums import Situation
 from filometro.enums import Immunizing
 from filometro.enums import District
 
-from pandas import DataFrame
 
 class Filometro():
     """Filometro é a API príncipal do pacote. 
@@ -40,7 +41,7 @@ class Filometro():
     
     def _load_postos(self) -> List[Posto]:
         postos_dicts = self._api.get_data()
-        postos_objects = convert.postos_dicts_to_postos_objects(postos_dicts)
+        postos_objects = convert.to_postos_objects(postos_dicts)
         return postos_objects
 
     def reload(self) -> None:
@@ -53,11 +54,6 @@ class Filometro():
         """Retorna os dados de todos os postos."""
 
         return self._postos
-
-    def to_dataframe(self) -> DataFrame:
-        """Retorna um DataFrame contendo os dados de todos os postos"""
-
-        return DataFrame(self.all_postos())
 
     def by_zone(self, zone: Zone) -> List[Posto]:
         """Retorna os dados dos postos por zona selecionada."""
@@ -83,3 +79,18 @@ class Filometro():
         """Retorna os dados dos postos por imunizante selecionado."""
         
         return [posto for posto in self._postos if posto.__dict__[immunizing.value] == '1']
+    
+    def to_dict(self) -> dict:
+        """Retorna uma lista de dict contendo os dados de todos os postos."""
+        
+        return convert.to_dict(self.all_postos())
+
+    def to_json(self) -> str:
+        """Retorna uma string json contendo os dados de todos os postos."""
+        
+        return convert.to_json(self.all_postos())
+
+    def to_dataframe(self) -> DataFrame:
+        """Retorna um DataFrame contendo os dados de todos os postos."""
+
+        return convert.to_dataframe(self.all_postos())

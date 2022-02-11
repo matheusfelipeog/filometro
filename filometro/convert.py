@@ -7,8 +7,8 @@ Fornece as funções de conversão de dados utilizada no pacote.
 """
 
 __all__ = [
-    'posto_dict_to_posto_object',
-    'postos_dicts_to_postos_objects'
+    'to_posto_object',
+    'to_postos_objects'
 ]
 
 from filometro import __version__
@@ -16,10 +16,18 @@ from filometro import __author__
 
 from typing import List
 
+import json
+
+from dataclasses import asdict
+
+from pandas import DataFrame
+
 from filometro.dataclasses import Posto
 
 
-def posto_dict_to_posto_object(posto_dict: dict) -> Posto:
+def to_posto_object(posto_dict: dict) -> Posto:
+    """Converte um dict com informações de um posto em um objeto Posto."""
+
     return Posto(
         equipment=posto_dict['equipamento'],
         address=posto_dict['endereco'],
@@ -44,10 +52,30 @@ def posto_dict_to_posto_object(posto_dict: dict) -> Posto:
     )
 
 
-def postos_dicts_to_postos_objects(postos_dicts: List[dict]) -> List[Posto]:
+def to_postos_objects(postos_dicts: List[dict]) -> List[Posto]:
+    """Converte uma lista de dict com informações de vários postos em 
+    uma lista de objetos Posto."""
+
     postos_objects = []
     for posto_dict in postos_dicts:
-        posto_object = posto_dict_to_posto_object(posto_dict)
+        posto_object = to_posto_object(posto_dict)
         postos_objects.append(posto_object)
-    
+
     return postos_objects
+
+
+def to_dict(postos: List[Posto]) -> List[dict]:
+
+    return [asdict(posto) for posto in postos]
+
+
+def to_json(postos: List[Posto]) -> str:
+
+    data = to_dict(postos)
+
+    return json.dumps(data)
+
+
+def to_dataframe(postos: List[Posto]) -> DataFrame:
+
+    return DataFrame(postos)
