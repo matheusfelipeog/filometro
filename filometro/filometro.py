@@ -138,4 +138,4 @@ class Filometro():
     def to_dataframe(self) -> DataFrame:
         """Retorna um DataFrame contendo os dados de todos os postos."""
 
-        return convert.to_dataframe(self.all_postos())
+        return DataFrame(self.all_postos())
