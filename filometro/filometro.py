@@ -13,9 +13,9 @@ from filometro import __author__
 
 from typing import List
 
-from pandas import DataFrame
-
 from dataclasses import asdict
+
+from pandas import DataFrame
 
 from filometro.deolhonafila import APIDeOlhoNaFila
 
