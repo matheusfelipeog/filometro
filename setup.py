@@ -73,7 +73,7 @@ setup(
     python_requires='>=3.7',
     project_urls={
         "Bug Tracker": "https://github.com/matheusfelipeog/filometro/issues",
-        "Documentation": "https://github.com/matheusfelipeog/filometro",
+        "Documentation": "https://github.com/matheusfelipeog/filometro/tree/master#documentação",
         "Source Code": "https://github.com/matheusfelipeog/filometro",
     },
     keywords=[
