@@ -66,14 +66,14 @@ setup(
         exclude=('tests',)
     ),
     install_requires=[
-        'requests',
-        'pandas'
+        'requests>=2.27.1',
+        'pandas>=1.4.1'
     ],
     zip_safe=False,
     python_requires='>=3.7',
     project_urls={
         "Bug Tracker": "https://github.com/matheusfelipeog/filometro/issues",
-        "Documentation": "https://github.com/matheusfelipeog/filometro",
+        "Documentation": "https://github.com/matheusfelipeog/filometro/tree/master#documentação",
         "Source Code": "https://github.com/matheusfelipeog/filometro",
     },
     keywords=[
@@ -91,6 +91,7 @@ setup(
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.9',
+        'Programming Language :: Python :: 3.10',
         'Programming Language :: Python :: Implementation :: CPython',
         'Topic :: Software Development :: Libraries',
         'Topic :: Software Development :: Libraries :: Python Modules'
