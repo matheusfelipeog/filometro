@@ -55,7 +55,7 @@ def _posto_dict_to_posto_object(posto_dict: dict) -> Posto:
 
 
 def _postos_dicts_to_postos_objects(postos_dicts: List[dict]) -> List[Posto]:
-    """Converte uma lista de dict com informações de vários postos em 
+    """Converte uma lista de dict com informações de vários postos em
     uma lista de objetos Posto."""
 
     postos_objects = []
@@ -67,7 +67,7 @@ def _postos_dicts_to_postos_objects(postos_dicts: List[dict]) -> List[Posto]:
 
 
 class Filometro():
-    """Filometro é a API príncipal do pacote. 
+    """Filometro é a API príncipal do pacote.
 
     Fornence os métodos para coletar e filtrar os dados dos postos.
     """
