@@ -78,7 +78,8 @@ setup(
     },
     keywords=[
         'filometro', 'de-olho-na-fila', 'data', 'sao-paulo',
-        'covid-19', 'vacina', 'vacinasampa', 'python', 'wrapper'
+        'covid-19', 'vacina', 'vacinasampa', 'python', 'wrapper',
+        'coronavirus'
     ],
     classifiers=[
         'Development Status :: 4 - Beta',
