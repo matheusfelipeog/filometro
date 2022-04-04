@@ -14,6 +14,8 @@ from dataclasses import field
 
 @dataclass
 class Posto():
+    """Modelo de dados do Posto."""
+
     equipment: str                               # equipamento
     address: str = field(repr=False)             # endereço
     district: str = field(repr=False)            # distrito
