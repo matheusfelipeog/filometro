@@ -55,7 +55,7 @@ with open(os.path.join(here, 'README.md'), mode='r', encoding='utf-8') as f:
 setup(
     name='filometro',
     version=__version__,
-    description='Um wrapper Python do site "De Olho na Fila": obtenha os dados dos postos de vacinação da covid-19 em São Paulo',
+    description='Obtenha os dados dos postos de vacinação da covid-19 em São Paulo',
     long_description=long_description,
     long_description_content_type='text/markdown',
     license='MIT License',
