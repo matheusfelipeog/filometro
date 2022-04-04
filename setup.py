@@ -38,7 +38,7 @@ class PublishCommand(Command):
 
         except OSError:
             pass
-        
+
         self.print_status('Build Source and Wheel distribution…')
         os.system('{python} setup.py sdist bdist_wheel'.format(python=sys.executable))
 
