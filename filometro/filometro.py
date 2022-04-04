@@ -72,8 +72,8 @@ class Filometro():
     Fornence os métodos para coletar e filtrar os dados dos postos.
     """
 
-    def __init__(self) -> None:
-        self._api = APIDeOlhoNaFila()
+    def __init__(self, _api: APIDeOlhoNaFila = APIDeOlhoNaFila) -> None:
+        self._api = _api()
 
         self._postos = self._load_postos()
 
