@@ -8,9 +8,9 @@ Disponíbiliza formas de ter acesso aos dados do site 'De Olho na Fila'.
 
 __all__ = ['APIDeOlhoNaFila']
 
-import requests
-
 from typing import List
+
+import requests
 
 
 class APIDeOlhoNaFila():
