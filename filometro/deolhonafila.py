@@ -8,9 +8,6 @@ Disponíbiliza formas de ter acesso aos dados do site 'De Olho na Fila'.
 
 __all__ = ['APIDeOlhoNaFila']
 
-from filometro import __version__
-from filometro import __author__
-
 import requests
 
 from typing import List

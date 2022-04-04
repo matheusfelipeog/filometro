@@ -8,9 +8,6 @@ Fornece os modelos de dados utilizados pelo pacote.
 
 __all__ = ['Posto']
 
-from filometro import __version__
-from filometro import __author__
-
 from dataclasses import dataclass
 from dataclasses import field
 
