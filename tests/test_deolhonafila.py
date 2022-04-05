@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Testes do modulo filometro.deolhonafila."""
+"""Testes do módulo filometro.deolhonafila."""
 
 
 import unittest
