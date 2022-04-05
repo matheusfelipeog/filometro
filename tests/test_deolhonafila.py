@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """Testes do módulo filometro.deolhonafila."""
 
 
