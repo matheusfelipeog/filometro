@@ -1,6 +1,5 @@
 """Testes do módulo filometro.deolhonafila."""
 
-
 import unittest
 
 from filometro.deolhonafila import APIDeOlhoNaFila
