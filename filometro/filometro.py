@@ -121,7 +121,7 @@ class Filometro():
     def by_immunizing(self, immunizing: Immunizing) -> List[Posto]:
         """Retorna os dados dos postos por imunizante selecionado."""
 
-        return [posto for posto in self._postos if posto.__dict__[immunizing.value] == '1']
+        return [posto for posto in self._postos if asdict(posto).get(immunizing.value) == '1']
 
     def to_dict(self) -> List[dict]:
         """Retorna uma lista de dict contendo os dados de todos os postos."""
