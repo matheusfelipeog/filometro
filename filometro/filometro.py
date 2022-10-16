@@ -83,7 +83,7 @@ class Filometro():
     def all_postos(self) -> List[Posto]:
         """Retorna os dados de todos os postos."""
 
-        return self._postos
+        return self._postos.copy()
 
     def all_postos_open(self) -> List[Posto]:
         """Retorna uma lista com todos os postos abertos no momento da busca."""
