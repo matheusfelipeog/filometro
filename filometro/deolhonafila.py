@@ -19,7 +19,7 @@ class APIDeOlhoNaFila():
         self.endpoint = 'https://deolhonafila.prefeitura.sp.gov.br/processadores/dados.php'
         self.payload = {'dados': 'dados'}
         self.headers = {
-            'User-Agent': (  # implicit concatenation
+            'User-Agent': (
                 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko)'
                 'Chrome/95.0.4638.69 Safari/537.36'
             ),
