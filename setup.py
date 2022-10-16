@@ -67,8 +67,7 @@ setup(
         exclude=('tests',)
     ),
     install_requires=[
-        'requests>=2.27.1',
-        'pandas>=1.4.1'
+        'requests>=2.27.1'
     ],
     zip_safe=False,
     python_requires='>=3.7',
