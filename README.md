@@ -9,9 +9,6 @@
     <a href="https://pypi.org/project/filometro/">
         <img alt="PyPI" src="https://img.shields.io/pypi/v/filometro" />
     </a>
-    <a href="https://github.com/matheusfelipeog/filometro/releases">
-        <img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/matheusfelipeog/filometro" />
-    </a>
     <a href="https://github.com/matheusfelipeog/filometro/blob/master/LICENSE">
         <img src="https://img.shields.io/github/license/matheusfelipeog/filometro" alt="License MIT" />
     </a>
