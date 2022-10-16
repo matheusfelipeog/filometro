@@ -9,11 +9,7 @@ __all__ = ['Filometro']
 
 from typing import List
 
-import json
-
 from dataclasses import asdict
-
-from pandas import DataFrame
 
 from filometro.deolhonafila import APIDeOlhoNaFila
 
@@ -127,23 +123,3 @@ class Filometro():
         """Retorna uma lista de dict contendo os dados de todos os postos."""
 
         return [asdict(posto) for posto in self.all_postos()]
-
-    def to_json(self, *args, **kwargs) -> str:
-        """Retorna uma string json contendo os dados de todos os postos.
-
-        Argumentos para configurar o retorno em json são aceitos:
-
-        >>> filometro.to_json(indent=4)
-
-        Consulte a documentação do pacote json para saber quais argumentos
-        são suportados.
-        """
-
-        data = self.to_dict()
-
-        return json.dumps(data, *args, **kwargs)
-
-    def to_dataframe(self) -> DataFrame:
-        """Retorna um DataFrame contendo os dados de todos os postos."""
-
-        return DataFrame(self.all_postos())

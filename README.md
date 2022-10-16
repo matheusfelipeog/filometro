@@ -159,8 +159,6 @@ Esse método recarrega todos os dados com as informações mais recentes dispon�
 - `Filometro.by_situation(...)` - Retorna os dados dos postos por situação selecionada.
 - `Filometro.by_immunizing(...)` - Retorna os dados dos postos por imunizante selecionado.
 - `Filometro.to_dict(...)` - Retorna uma lista de objetos do tipo `dict` contendo todos os dados de postos.
-- `Filometro.to_json(...)` - Retorna uma string `json` contendo todos os dados de postos. Também há suporte para a manipulação do retorno utilizando os mesmos argumentos do [método json integrado ao Python](https://docs.python.org/3/library/json.html).
-- `Filometro.to_dataframe(...)` - Retorna um [DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html) contendo os dados de todos os postos.
 
 ### Identificadores para filtragem (Enums)
 
