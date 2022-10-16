@@ -3,15 +3,15 @@
 import unittest
 
 from filometro.dataclasses import Posto
-from filometro.filometro import _posto_dict_to_posto_object
-from filometro.filometro import _postos_dicts_to_postos_objects
+from filometro.filometro import _posto_factory
+from filometro.filometro import _postos_factory
 
 
-class TestPostoConversions(unittest.TestCase):
-    """Testes para todas as conversões de dados relacionados aos Postos."""
+class TestPostoFactory(unittest.TestCase):
+    """Testes para criação de objetos Posto."""
 
     def setUp(self):
-        self.posto_dict = {
+        self.data = {
             'equipamento': 'test',
             'endereco': 'test',
             'distrito': 'test',
@@ -34,31 +34,31 @@ class TestPostoConversions(unittest.TestCase):
             'id_tipo_posto': 'test'
         }
 
-    def test_conversion_posto_dict_to_posto_object(self):
-        posto_object = _posto_dict_to_posto_object(self.posto_dict)
+    def test_posto_factory(self):
+        posto = _posto_factory(self.data)
 
-        self.assertIsInstance(posto_object, Posto)
+        self.assertIsInstance(posto, Posto)
 
-        self.posto_dict.pop('equipamento')
+        self.data.pop('equipamento')
 
         with self.assertRaises(KeyError):
-            _posto_dict_to_posto_object(self.posto_dict)
+            _posto_factory(self.data)
 
-    def test_conversions_postos_dicts_to_postos_objects(self):
+    def test_postos_factory(self):
         number_of_postos = 5
-        postos_dicts = [self.posto_dict.copy() for _ in range(number_of_postos)]
+        data_list = [self.data.copy() for _ in range(number_of_postos)]
 
-        postos_objects = _postos_dicts_to_postos_objects(postos_dicts)
+        postos = _postos_factory(data_list)
 
-        self.assertIsInstance(postos_objects, list)
+        self.assertIsInstance(postos, list)
 
-        postos_objects_length = len(postos_objects)
-        self.assertEqual(postos_objects_length, number_of_postos)
+        postos_length = len(postos)
+        self.assertEqual(postos_length, number_of_postos)
 
-        for posto_object in postos_objects:
+        for posto in postos:
             with self.subTest():
-                self.assertIsInstance(posto_object, Posto)
+                self.assertIsInstance(posto, Posto)
 
-        postos_dicts[1].pop('equipamento')
+        data_list[1].pop('equipamento')
         with self.assertRaises(KeyError):
-            _postos_dicts_to_postos_objects(postos_dicts)
+            _postos_factory(data_list)
