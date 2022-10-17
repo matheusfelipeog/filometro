@@ -145,3 +145,11 @@ class TestFilometro(unittest.TestCase):
         expected_number_of_postos_open = 1
 
         self.assertEqual(num_of_postos, expected_number_of_postos_open)
+
+    def test_get_all_postos_closed(self):
+        postos = self.filometro.all_postos_closed()
+
+        num_of_postos = len(postos)
+        expected_number_of_postos_closed = 1
+
+        self.assertEqual(num_of_postos, expected_number_of_postos_closed)
