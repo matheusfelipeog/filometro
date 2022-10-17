@@ -59,4 +59,3 @@ class TestPostoFactory(unittest.TestCase):
         for posto in postos:
             with self.subTest():
                 self.assertIsInstance(posto, Posto)
-
