@@ -60,6 +60,3 @@ class TestPostoFactory(unittest.TestCase):
             with self.subTest():
                 self.assertIsInstance(posto, Posto)
 
-        data_list[1].pop('equipamento')
-        with self.assertRaises(KeyError):
-            _postos_factory(data_list)
