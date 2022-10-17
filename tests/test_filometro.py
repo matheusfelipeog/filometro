@@ -10,6 +10,7 @@ from filometro.enums import Zone
 from filometro.enums import Modality
 from filometro.enums import District
 from filometro.enums import Situation
+from filometro.enums import Immunizing
 
 from filometro.filometro import _posto_factory
 from filometro.filometro import _postos_factory
@@ -190,3 +191,11 @@ class TestFilometro(unittest.TestCase):
         expected_number_of_postos_from_situation = 1
 
         self.assertEqual(num_of_postos, expected_number_of_postos_from_situation)
+
+    def test_get_all_postos_from_a_specific_immunizing(self):
+        postos = self.filometro.by_immunizing(Immunizing.CORONAVAC)
+
+        num_of_postos = len(postos)
+        expected_number_of_postos_from_coronavac_immunizing = 1
+
+        self.assertEqual(num_of_postos, expected_number_of_postos_from_coronavac_immunizing)
