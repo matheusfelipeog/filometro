@@ -39,6 +39,7 @@ class TestPostoFactory(unittest.TestCase):
 
         self.assertIsInstance(posto, Posto)
 
+    def test_raise_exception_with_missing_mandatory_key(self):
         self.data.pop('equipamento')
 
         with self.assertRaises(KeyError):
