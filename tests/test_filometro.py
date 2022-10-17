@@ -45,7 +45,7 @@ class TestPostoFactory(unittest.TestCase):
         with self.assertRaises(KeyError):
             _posto_factory(self.data)
 
-    def test_postos_factory(self):
+    def test_create_a_list_of_postos_objects(self):
         number_of_postos = 5
         data_list = [self.data.copy() for _ in range(number_of_postos)]
 
