@@ -123,3 +123,17 @@ class TestFilometro(unittest.TestCase):
 
     def setUp(self):
         self.filometro = Filometro(_api=FakeAPIDeOlhoNaFila)
+        self.total_of_postos = len(self.filometro._postos)
+
+    def test_get_all_postos(self):
+        postos = self.filometro.all_postos()
+
+        self.assertIsInstance(postos, list)
+
+        num_of_postos = len(postos)
+        self.assertEqual(num_of_postos, self.total_of_postos)
+
+    def test_return_from_all_postos_cannot_reference_internal_data_list(self):
+        postos = self.filometro.all_postos()
+
+        self.assertIsNot(postos, self.filometro._postos)
