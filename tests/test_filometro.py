@@ -7,6 +7,7 @@ from typing import List
 from filometro.dataclasses import Posto
 
 from filometro.enums import Zone
+from filometro.enums import Modality
 
 from filometro.filometro import _posto_factory
 from filometro.filometro import _postos_factory
@@ -163,3 +164,11 @@ class TestFilometro(unittest.TestCase):
         expected_number_of_postos_from_sul_zone = 1
 
         self.assertEqual(num_of_postos, expected_number_of_postos_from_sul_zone)
+
+    def test_get_all_postos_from_a_specific_modality(self):
+        postos = self.filometro.by_modality(Modality.POSTO_FIXO)
+
+        num_of_postos = len(postos)
+        expected_number_of_postos_fixos = 2
+
+        self.assertEqual(num_of_postos, expected_number_of_postos_fixos)
