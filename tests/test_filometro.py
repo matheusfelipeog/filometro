@@ -128,7 +128,7 @@ class TestFilometro(unittest.TestCase):
     """Testes relacionados a classe Filometro."""
 
     def setUp(self):
-        self.filometro = Filometro(_api=FakeAPIDeOlhoNaFila)
+        self.filometro = Filometro(_api=FakeAPIDeOlhoNaFila())
         self.total_of_postos = len(self.filometro._postos)
 
     def test_get_all_postos(self):
