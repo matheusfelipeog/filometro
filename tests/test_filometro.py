@@ -34,7 +34,7 @@ class TestPostoFactory(unittest.TestCase):
             'id_tipo_posto': 'test'
         }
 
-    def test_posto_factory(self):
+    def test_create_posto_object(self):
         posto = _posto_factory(self.data)
 
         self.assertIsInstance(posto, Posto)
