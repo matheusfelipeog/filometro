@@ -199,3 +199,15 @@ class TestFilometro(unittest.TestCase):
         expected_number_of_postos_from_coronavac_immunizing = 1
 
         self.assertEqual(num_of_postos, expected_number_of_postos_from_coronavac_immunizing)
+
+    def test_convert_postos_to_dict(self):
+        data = self.filometro.to_dict()
+
+        self.assertIsInstance(data, list)
+
+        num_of_data = len(data)
+        self.assertEqual(num_of_data, self.total_of_postos)
+
+        for d in data:
+            with self.subTest():
+                self.assertIsInstance(d, dict)
