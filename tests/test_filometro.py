@@ -137,3 +137,11 @@ class TestFilometro(unittest.TestCase):
         postos = self.filometro.all_postos()
 
         self.assertIsNot(postos, self.filometro._postos)
+
+    def test_get_all_postos_open(self):
+        postos = self.filometro.all_postos_open()
+
+        num_of_postos = len(postos)
+        expected_number_of_postos_open = 1
+
+        self.assertEqual(num_of_postos, expected_number_of_postos_open)
