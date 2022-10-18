@@ -45,6 +45,7 @@ class Posto():
     def __post_init__(self) -> None:
         self.maps = self._build_maps_link()
         self.contacts.extend(self._extract_contacts())
+        self.address = self._extract_address()
 
     @staticmethod
     def _remove_substring_until_the_end(string: str, substring: str) -> str:
