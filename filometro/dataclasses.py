@@ -43,9 +43,9 @@ class Posto():
     _id_modality: str = field(repr=False)        # id_tipo_posto
 
     def __post_init__(self) -> None:
-        self.maps = self._build_maps_link()
         self.contacts.extend(self._extract_contacts())
         self.address = self._extract_address()
+        self.maps = self._build_maps_link()
 
     @staticmethod
     def _remove_substring_until_the_end(string: str, substring: str) -> str:
@@ -68,8 +68,7 @@ class Posto():
         return address.strip()
 
     def _build_maps_link(self) -> str:
-        address = self._extract_address()
-        address = address.replace(' ', '+')
+        address = self.address.replace(' ', '+')
 
         return f'https://www.google.com.br/maps/place/{address}'
 
