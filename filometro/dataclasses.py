@@ -10,6 +10,10 @@ __all__ = ['Posto']
 from dataclasses import dataclass
 from dataclasses import field
 
+from typing import List
+
+import re
+
 
 @dataclass
 class Posto():
@@ -20,6 +24,7 @@ class Posto():
     district: str = field(repr=False)            # distrito
     zone: str = field(repr=False)                # crs (Coordinate Reference Systems)
     maps: str = field(init=False, repr=False)
+    contacts: List[str] = field(init=False, repr=False, default_factory=list)
     astrazeneca: str = field(repr=False)
     coronavac: str = field(repr=False)
     coronavac_pediatrica: str = field(repr=False)
@@ -39,6 +44,7 @@ class Posto():
 
     def __post_init__(self) -> None:
         self.maps = self._build_maps_link()
+        self.contacts.extend(self._extract_contacts())
 
     @staticmethod
     def _remove_substring_until_the_end(string: str, substring: str) -> str:
@@ -65,3 +71,15 @@ class Posto():
         address = address.replace(' ', '+')
 
         return f'https://www.google.com.br/maps/place/{address}'
+
+    def _extract_contacts(self) -> List[str]:
+        address = self.address.replace(' ', '').upper()
+
+        concatenated_contacts = re.split(r'F:|TEL:|FONE:', address)[-1]
+        contacts = re.findall(r'\d{4}-?\d{4}', concatenated_contacts)
+
+        for idx, contact in enumerate(contacts):
+            if '-' not in contact:
+                contacts[idx] = f'{contact[:4]}-{contact[4:]}'
+
+        return contacts
