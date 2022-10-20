@@ -66,6 +66,12 @@ class Filometro():
 
         self._postos = self._load_postos()
 
+    def __repr__(self) -> str:
+        return f'{self.__class__.__name__}(postos={len(self._postos)})'
+
+    def __str__(self) -> str:
+        return repr(self)
+
     def _load_postos(self) -> List[Posto]:
         data_list = self._api.get_data()
         return _postos_factory(data_list)
