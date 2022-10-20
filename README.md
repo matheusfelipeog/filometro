@@ -69,7 +69,7 @@ $ pip install filometro
 
 ## Demo
 
-Obtenha uma lista de postos que tem disponível em seu estoque o imunizante da PFizer e mostre a situação da fila, o endereço e a zona em que o posto está localizado:
+Obtenha uma lista de postos que tem disponível em seu estoque o imunizante da PFizer:
 
 ```python
 >>> from filometro import Filometro
@@ -84,24 +84,9 @@ Obtenha uma lista de postos que tem disponível em seu estoque o imunizante da P
     ...  # comprimido
     Posto(equipment='UBS SANTA CRUZ', last_update='2021-12-22 12:46:35.190')
 ]
-
->>> for posto in postos:
-...     print(f'Fila: {posto.situation}')
-...     print(f'Endereço: {posto.address}')
-...     print(f'Zona: {posto.zone}', end='\n\n')
-
-Fila: FILA PEQUENA
-Endereço: R. HUMAITÁ, 520 - BELA VISTA - CEP: 01321-010 - Tel: 3241- 1632/ 3241-1163
-Zona: CENTRO
-
-...  # comprimido
-
-Fila: FILA PEQUENA
-Endereço: Rua Santa Cruz, 1.191 - Vila Mariana
-Zona: SUL
 ```
 
-Verifique a documentação para obter informações sobre os métodos disponíveis no pacote.
+Verifique a documentação para obter informações sobre os atributos e métodos disponíveis.
 
 
 ## Documentação
