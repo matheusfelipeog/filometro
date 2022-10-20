@@ -41,20 +41,21 @@
 
 ## O que é?
 
-Filômetro é um pacote que faz o papel de um wrapper (embrulho) do site [De Olho Na Fila](https://deolhonafila.prefeitura.sp.gov.br/), de modo a disponibilizar acesso a diversos dados sobre postos de vacinação em todo o Estado de São Paulo.
+Filometro é um wrapper (embrulho) do site [De Olho Na Fila](https://deolhonafila.prefeitura.sp.gov.br/), de modo a disponibilizar acesso a diversos dados sobre os postos de vacinação em todo o Estado de São Paulo.
 
 Com esse pacote você tem acesso aos seguintes dados dos postos:
 
 - Equipamento
 - Endereço
+- Contatos
 - Distrito
 - Zona
-- Os imunizantes
+- Os imunizantes disponíveis
 - Situação da fila
 - Modalidade
 - Data e hora da última atualização
 
-As informações são exatamente as mesmas disponíveis no site oficial (De Olho na Fila), porém disponibilizados por meio de uma interface Python simples para facilitar o uso, manipulação e filtragem dos dados. Consulte a [documentação](#documentação) para saber como utiliza-lo.
+As informações são exatamente as mesmas disponíveis no site oficial (De Olho na Fila), porém disponibilizados por meio de um pacote Python simples para facilitar a coleta, manipulação e filtragem dos dados. Consulte a [documentação](#documentação) para saber como utiliza-lo.
 
 
 ## Instalação
