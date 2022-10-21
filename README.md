@@ -33,6 +33,7 @@
 - [Demo](#demo)
 - [Documentação](#documentação)
    - [Como utilizar?](#como-utilizar)
+   - [Objeto Posto](#objeto-posto)
    - [Métodos da classe Filometro](#métodos-da-classe-filometro)
    - [Identificadores para filtragem (Enums)](#identificadores-para-filtragem-enumsidentificadores-para-filtragem-enums)
 - [Contribuições](#contribuições)
@@ -130,18 +131,50 @@ Para atualizar os dados dos postos armazenados em memória é indicado utilizar 
 
 Esse método recarrega todos os dados com as informações mais recentes disponíveis no site oficial.
 
+Sempre que precisar, utilize a função `help()` em alguma classe, objeto ou método para obter ajuda:
+
+```python
+>>> help(filometro)
+```
+
+### Objeto Posto
+
+Todos os métodos tem como retorno uma lista de dados, esses dados são representados no objeto Posto. Veja quais são seus atributos:
+
+```python
+>>> posto.equipment
+>>> posto.address
+>>> posto.district
+>>> posto.zone
+>>> posto.maps
+>>> posto.contacts
+>>> posto.astrazeneca
+>>> posto.coronavac
+>>> posto.coronavac_pediatrica
+>>> posto.pfizer
+>>> posto.pfizer_pediatrica
+>>> posto.janssen
+>>> posto.influenza
+>>> posto.intercambialidade
+>>> posto.situation
+>>> posto.modality
+>>> posto.last_update
+```
+
 ### Métodos da classe Filometro
 
-- `Filometro.reload(...)` - Recarregar os dados com as informações mais recentes.
-- `Filometro.all_postos(...)` - Retorna os dados de todos os postos.
-- `Filometro.all_postos_open(...)` - Retorna os dados de todos os postos abertos no momento da busca.
-- `Filometro.all_postos_closed(...)` - Retorna os dados de todos os postos fechados no momento da busca.
-- `Filometro.by_zone(...)` - Retorna os dados dos postos por zona selecionada.
-- `Filometro.by_modality(...)` - Retorna os dados dos postos por modalidade selecionada.
-- `Filometro.by_district(...)` - Retorna os dados dos postos por distrito selecionado.
-- `Filometro.by_situation(...)` - Retorna os dados dos postos por situação selecionada.
-- `Filometro.by_immunizing(...)` - Retorna os dados dos postos por imunizante selecionado.
-- `Filometro.to_dict(...)` - Retorna uma lista de objetos do tipo `dict` contendo todos os dados de postos.
+```python
+>>> filometro.reload(...)  # Recarregar os dados com as informações mais recentes.
+>>> filometro.all_postos(...)  # Retorna os dados de todos os postos.
+>>> filometro.all_postos_open(...)  # Retorna os dados de todos os postos abertos no momento da busca.
+>>> filometro.all_postos_closed(...)  # Retorna os dados de todos os postos fechados no momento da busca.
+>>> filometro.by_zone(...)  # Retorna os dados dos postos por zona selecionada.
+>>> filometro.by_modality(...)  # Retorna os dados dos postos por modalidade selecionada.
+>>> filometro.by_district(...)  # Retorna os dados dos postos por distrito selecionado.
+>>> filometro.by_situation(...)  # Retorna os dados dos postos por situação selecionada.
+>>> filometro.by_immunizing(...)  # Retorna os dados dos postos por imunizante selecionado.
+>>> filometro.to_dict(...)  # Retorna uma lista de objetos do tipo `dict` contendo todos os dados de postos.
+```
 
 ### Identificadores para filtragem (Enums)
 
@@ -153,39 +186,56 @@ Todos os Enums estão disponíveis para uso atráves da interface príncipal do 
 
 > Para obter mais informações sobre cada um dos Enums, use as funções `dir()` ou `help()` passando um dos Enums como argumento.
 
-- `Zone` - Representa as zonas do Estado de São Paulo.
-    - `Zone.SUL`
-    - `Zone.OESTE`
-    - `Zone.NORTE`
-    - `Zone.LESTE`
-    - `Zone.CENTRO`
-    - `Zone.MEGA_DRIVES`
+`Zone` - Representa as zonas do Estado de São Paulo:
 
-- `Modality` - Representa as modalidades dos postos de saúde.
-    - `Modality.PARQUES`
-    - `Modality.POSTO_FIXO`
-    - `Modality.POSTO_VOLANTE`
-    - `Modality.DRIVE_THRU`
-    - `Modality.MEGAPOSTO`
+```python
+>>> Zone.SUL
+>>> Zone.OESTE
+>>> Zone.NORTE
+>>> Zone.LESTE
+>>> Zone.CENTRO
+>>> Zone.MEGA_DRIVES
+```
 
-- `District` - Representa todos os distritos do Estado de São Paulo que disponíbilizam um imunizante em seus postos de saúde. Use a função `dir(District)` ou `help(District)` para mais infomações.
+`Modality` - Representa as modalidades dos postos de saúde:
 
-- `Situation` - Representa as possíveis situações das filas nos postos de saúde.
-    - `Situation.NAO_FUNCIONANDO`
-    - `Situation.SEM_FILA`
-    - `Situation.FILA_PEQUENA`
-    - `Situation.FILA_MEDIA`
-    - `Situation.FILA_GRANDE`
+```python
+>>> Modality.PARQUES
+>>> Modality.POSTO_FIXO
+>>> Modality.POSTO_VOLANTE
+>>> Modality.DRIVE_THRU
+>>> Modality.MEGAPOSTO
+```
 
-- `Immunizing` - Representa os imunizantes disponíveis nos postos de saúde do Estado de São Paulo.
-    - `Immunizing.ASTRAZENECA`
-    - `Immunizing.INTERCAMBIALIDADE`
-    - `Immunizing.PFIZER`
-    - `Immunizing.PFIZER_PEDIATRICA`
-    - `Immunizing.CORONAVAC`
-    - `Immunizing.CORONAVAC_PEDIATRICA`
-    - `Immunizing.JANSSEN`
-    - `Immunizing.INFLUENZA`
+`District` - Representa todos os distritos do Estado de São Paulo que disponíbilizam um imunizante em seus postos de saúde. Como há muitos distritos, use a função `dir` ou `help` para mais infomações:
+
+```python
+>>> help(District)
+>>> dir(District)
+```
+
+`Situation` - Representa as possíveis situações das filas nos postos:
+
+```python
+>>> Situation.NAO_FUNCIONANDO
+>>> Situation.SEM_FILA
+>>> Situation.FILA_PEQUENA
+>>> Situation.FILA_MEDIA
+>>> Situation.FILA_GRANDE
+```
+
+`Immunizing` - Representa os imunizantes disponíveis nos postos no Estado de São Paulo:
+
+```python
+>>> Immunizing.ASTRAZENECA
+>>> Immunizing.INTERCAMBIALIDADE
+>>> Immunizing.PFIZER
+>>> Immunizing.PFIZER_PEDIATRICA
+>>> Immunizing.CORONAVAC
+>>> Immunizing.CORONAVAC_PEDIATRICA
+>>> Immunizing.JANSSEN
+>>> Immunizing.INFLUENZA
+```
 
 
 ## Contribuições
@@ -198,11 +248,11 @@ Abaixo mostro com o que você pode contribuir:
 
 - Existe uma issue aberta e você quer resolve-la, quer implementar uma nova funcionalidade ou melhorar a documentação? Faça suas adições e me envie um *Pull Request*
 
-- Gostou do projeto, mas não quer ou ainda não consegue contribuir com ele? Considere deixar uma estrela ⭐ para o **Filômetro**
+- Gostou do projeto, mas não quer ou ainda não consegue contribuir com ele? Considere deixar uma estrela ⭐ para o **Filometro**
 
-Obrigado pelo interesse em colaborar de alguma forma com o projeto 😄
+Obrigado pelo interesse em colaborar de alguma forma com o projeto ❤
 
 
 ## Licença
 
-**Filômetro** utiliza a *licença MIT* em todo seu código, confira suas condições em [MIT License](https://github.com/matheusfelipeog/filometro/blob/master/LICENSE).
+**Filometro** utiliza a *licença MIT* em todo seu código, confira suas condições em [MIT License](https://github.com/matheusfelipeog/filometro/blob/master/LICENSE).
