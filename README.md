@@ -164,16 +164,16 @@ Todos os métodos tem como retorno uma lista de dados, esses dados são represen
 ### Métodos da classe Filometro
 
 ```python
->>> filometro.reload(...)  # Recarregar os dados com as informações mais recentes.
->>> filometro.all_postos(...)  # Retorna os dados de todos os postos.
->>> filometro.all_postos_open(...)  # Retorna os dados de todos os postos abertos no momento da busca.
->>> filometro.all_postos_closed(...)  # Retorna os dados de todos os postos fechados no momento da busca.
->>> filometro.by_zone(...)  # Retorna os dados dos postos por zona selecionada.
->>> filometro.by_modality(...)  # Retorna os dados dos postos por modalidade selecionada.
->>> filometro.by_district(...)  # Retorna os dados dos postos por distrito selecionado.
->>> filometro.by_situation(...)  # Retorna os dados dos postos por situação selecionada.
->>> filometro.by_immunizing(...)  # Retorna os dados dos postos por imunizante selecionado.
->>> filometro.to_dict(...)  # Retorna uma lista de objetos do tipo `dict` contendo todos os dados de postos.
+>>> filometro.reload(...)             # Atualizar dados em memória.
+>>> filometro.all_postos(...)         # Obter todos os postos.
+>>> filometro.all_postos_open(...)    # Obter todos os postos abertos.
+>>> filometro.all_postos_closed(...)  # Obter todos os postos fechados.
+>>> filometro.by_zone(...)            # Obter todos postos de uma zona.
+>>> filometro.by_modality(...)        # Obter todos postos de uma modalidade.
+>>> filometro.by_district(...)        # Obter todos postos de um distrito.
+>>> filometro.by_situation(...)       # Obter todos postos por situação.
+>>> filometro.by_immunizing(...)      # Obter todos postos que possuem um imunizante.
+>>> filometro.to_dict(...)            # Obter todos postos convertidos para `dict`.
 ```
 
 ### Identificadores para filtragem (Enums)
