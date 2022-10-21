@@ -35,7 +35,7 @@
    - [Como utilizar?](#como-utilizar)
    - [Objeto Posto](#objeto-posto)
    - [Métodos da classe Filometro](#métodos-da-classe-filometro)
-   - [Identificadores para filtragem (Enums)](#identificadores-para-filtragem-enumsidentificadores-para-filtragem-enums)
+   - [Identificadores para filtragem](#identificadores-para-filtragem)
 - [Contribuições](#contribuições)
 - [Licença](#licença)
 
@@ -176,15 +176,13 @@ Todos os métodos tem como retorno uma lista de dados, esses dados são represen
 >>> filometro.to_dict()               # Obter todos postos convertidos para `dict`.
 ```
 
-### Identificadores para filtragem (Enums)
+### Identificadores para filtragem
 
-Todos os Enums estão disponíveis para uso atráves da interface príncipal do pacote:
+Todos os identificadores estão disponíveis para uso atráves da interface príncipal do pacote:
 
 ```python
 >>> from filometro import Zone, Modality, District, Situation, Immunizing
 ```
-
-> Para obter mais informações sobre cada um dos Enums, use as funções `dir()` ou `help()` passando um dos Enums como argumento.
 
 `Zone` - Representa as zonas do Estado de São Paulo:
 
@@ -197,7 +195,7 @@ Todos os Enums estão disponíveis para uso atráves da interface príncipal do 
 >>> Zone.MEGA_DRIVES
 ```
 
-`Modality` - Representa as modalidades dos postos de saúde:
+`Modality` - Representa as modalidades dos postos:
 
 ```python
 >>> Modality.PARQUES
@@ -207,14 +205,14 @@ Todos os Enums estão disponíveis para uso atráves da interface príncipal do 
 >>> Modality.MEGAPOSTO
 ```
 
-`District` - Representa todos os distritos do Estado de São Paulo que disponíbilizam um imunizante em seus postos de saúde. Como há muitos distritos, use a função `dir` ou `help` para mais infomações:
+`District` - Representa todos os distritos do Estado de São Paulo que disponíbilizam um imunizante em seus postos. Como há muitos distritos, use a função `dir` ou `help` para mais infomações:
 
 ```python
 >>> help(District)
 >>> dir(District)
 ```
 
-`Situation` - Representa as possíveis situações das filas nos postos:
+`Situation` - Representa as situações das filas nos postos:
 
 ```python
 >>> Situation.NAO_FUNCIONANDO
