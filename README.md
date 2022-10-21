@@ -1,6 +1,6 @@
 <h1 align="center">
-    <img src="https://raw.githubusercontent.com/matheusfelipeog/filometro/master/.github/assets/images/logo.png" alt="Logo filômetro" width="100px" />
-    <br />Filômetro
+    <img src="https://raw.githubusercontent.com/matheusfelipeog/filometro/master/.github/assets/images/logo.png" alt="Logo filometro" width="100px" />
+    <br />Filometro
 </h1>
 
 <p align="center">
@@ -23,6 +23,9 @@
     <a href="https://pypi.org/project/filometro/">
         <img alt="PyPI - Status" src="https://img.shields.io/pypi/status/filometro" />
     </a>
+    <a href="https://github.com/matheusfelipeog/filometro/actions/workflows/tests.yml">
+        <img alt="Tests - Status" src="https://github.com/matheusfelipeog/filometro/actions/workflows/tests.yml/badge.svg" />
+    </a>
 </p>
 
 
@@ -33,28 +36,30 @@
 - [Demo](#demo)
 - [Documentação](#documentação)
    - [Como utilizar?](#como-utilizar)
+   - [Objeto Posto](#objeto-posto)
    - [Métodos da classe Filometro](#métodos-da-classe-filometro)
-   - [Identificadores para filtragem (Enums)](#identificadores-para-filtragem-enumsidentificadores-para-filtragem-enums)
+   - [Identificadores para filtragem](#identificadores-para-filtragem)
 - [Contribuições](#contribuições)
 - [Licença](#licença)
 
 
 ## O que é?
 
-Filômetro é um pacote que faz o papel de um wrapper (embrulho) do site [De Olho Na Fila](https://deolhonafila.prefeitura.sp.gov.br/), de modo a disponibilizar acesso a diversos dados sobre postos de vacinação em todo o Estado de São Paulo.
+Filometro é um wrapper (embrulho) do site [De Olho Na Fila](https://deolhonafila.prefeitura.sp.gov.br/), de modo a disponibilizar acesso a diversos dados sobre os postos de vacinação em todo o Estado de São Paulo.
 
 Com esse pacote você tem acesso aos seguintes dados dos postos:
 
 - Equipamento
 - Endereço
+- Contatos
 - Distrito
 - Zona
-- Os imunizantes
+- Os imunizantes disponíveis
 - Situação da fila
 - Modalidade
 - Data e hora da última atualização
 
-As informações são exatamente as mesmas disponíveis no site oficial (De Olho na Fila), porém disponibilizados por meio de uma interface Python simples para facilitar o uso, manipulação e filtragem dos dados. Consulte a [documentação](#documentação) para saber como utiliza-lo.
+As informações são exatamente as mesmas disponíveis no site oficial (De Olho na Fila), porém disponibilizados por meio de um pacote Python simples para facilitar a coleta, manipulação e filtragem dos dados. Consulte a [documentação](#documentação) para saber como utiliza-lo.
 
 
 ## Instalação
@@ -68,7 +73,7 @@ $ pip install filometro
 
 ## Demo
 
-Obtenha uma lista de postos que tem disponível em seu estoque o imunizante da PFizer e mostre a situação da fila, o endereço e a zona em que o posto está localizado:
+Obtenha uma lista de postos que tem disponível em seu estoque o imunizante da PFizer:
 
 ```python
 >>> from filometro import Filometro
@@ -83,24 +88,9 @@ Obtenha uma lista de postos que tem disponível em seu estoque o imunizante da P
     ...  # comprimido
     Posto(equipment='UBS SANTA CRUZ', last_update='2021-12-22 12:46:35.190')
 ]
-
->>> for posto in postos:
-...     print(f'Fila: {posto.situation}')
-...     print(f'Endereço: {posto.address}')
-...     print(f'Zona: {posto.zone}', end='\n\n')
-
-Fila: FILA PEQUENA
-Endereço: R. HUMAITÁ, 520 - BELA VISTA - CEP: 01321-010 - Tel: 3241- 1632/ 3241-1163
-Zona: CENTRO
-
-...  # comprimido
-
-Fila: FILA PEQUENA
-Endereço: Rua Santa Cruz, 1.191 - Vila Mariana
-Zona: SUL
 ```
 
-Verifique a documentação para obter informações sobre os métodos disponíveis no pacote.
+Verifique a documentação para obter informações sobre os atributos e métodos disponíveis.
 
 
 ## Documentação
@@ -144,62 +134,109 @@ Para atualizar os dados dos postos armazenados em memória é indicado utilizar 
 
 Esse método recarrega todos os dados com as informações mais recentes disponíveis no site oficial.
 
+Sempre que precisar, utilize a função `help()` em alguma classe, objeto ou método para obter ajuda:
+
+```python
+>>> help(filometro)
+```
+
+### Objeto Posto
+
+Todos os métodos tem como retorno uma lista de dados, esses dados são representados no objeto Posto. Veja quais são seus atributos:
+
+```python
+>>> posto.equipment
+>>> posto.address
+>>> posto.district
+>>> posto.zone
+>>> posto.maps
+>>> posto.contacts
+>>> posto.astrazeneca
+>>> posto.coronavac
+>>> posto.coronavac_pediatrica
+>>> posto.pfizer
+>>> posto.pfizer_pediatrica
+>>> posto.janssen
+>>> posto.influenza
+>>> posto.intercambialidade
+>>> posto.situation
+>>> posto.modality
+>>> posto.last_update
+```
+
 ### Métodos da classe Filometro
 
-- `Filometro.reload(...)` - Recarregar os dados com as informações mais recentes.
-- `Filometro.all_postos(...)` - Retorna os dados de todos os postos.
-- `Filometro.all_postos_open(...)` - Retorna os dados de todos os postos abertos no momento da busca.
-- `Filometro.all_postos_closed(...)` - Retorna os dados de todos os postos fechados no momento da busca.
-- `Filometro.by_zone(...)` - Retorna os dados dos postos por zona selecionada.
-- `Filometro.by_modality(...)` - Retorna os dados dos postos por modalidade selecionada.
-- `Filometro.by_district(...)` - Retorna os dados dos postos por distrito selecionado.
-- `Filometro.by_situation(...)` - Retorna os dados dos postos por situação selecionada.
-- `Filometro.by_immunizing(...)` - Retorna os dados dos postos por imunizante selecionado.
-- `Filometro.to_dict(...)` - Retorna uma lista de objetos do tipo `dict` contendo todos os dados de postos.
+```python
+>>> filometro.reload()             # Atualizar dados em memória.
+>>> filometro.all_postos()         # Obter todos os postos.
+>>> filometro.all_postos_open()    # Obter todos os postos abertos.
+>>> filometro.all_postos_closed()  # Obter todos os postos fechados.
+>>> filometro.by_zone(...)         # Obter todos postos de uma zona.
+>>> filometro.by_modality(...)     # Obter todos postos de uma modalidade.
+>>> filometro.by_district(...)     # Obter todos postos de um distrito.
+>>> filometro.by_situation(...)    # Obter todos postos por situação.
+>>> filometro.by_immunizing(...)   # Obter todos postos que possuem um imunizante.
+>>> filometro.to_dict()            # Obter todos postos convertidos para `dict`.
+```
 
-### Identificadores para filtragem (Enums)
+### Identificadores para filtragem
 
-Todos os Enums estão disponíveis para uso atráves da interface príncipal do pacote:
+Todos os identificadores estão disponíveis para uso atráves da interface príncipal do pacote:
 
 ```python
 >>> from filometro import Zone, Modality, District, Situation, Immunizing
 ```
 
-> Para obter mais informações sobre cada um dos Enums, use as funções `dir()` ou `help()` passando um dos Enums como argumento.
+`Zone` - Representa as zonas do Estado de São Paulo:
 
-- `Zone` - Representa as zonas do Estado de São Paulo.
-    - `Zone.SUL`
-    - `Zone.OESTE`
-    - `Zone.NORTE`
-    - `Zone.LESTE`
-    - `Zone.CENTRO`
-    - `Zone.MEGA_DRIVES`
+```python
+>>> Zone.SUL
+>>> Zone.OESTE
+>>> Zone.NORTE
+>>> Zone.LESTE
+>>> Zone.CENTRO
+>>> Zone.MEGA_DRIVES
+```
 
-- `Modality` - Representa as modalidades dos postos de saúde.
-    - `Modality.PARQUES`
-    - `Modality.POSTO_FIXO`
-    - `Modality.POSTO_VOLANTE`
-    - `Modality.DRIVE_THRU`
-    - `Modality.MEGAPOSTO`
+`Modality` - Representa as modalidades dos postos:
 
-- `District` - Representa todos os distritos do Estado de São Paulo que disponíbilizam um imunizante em seus postos de saúde. Use a função `dir(District)` ou `help(District)` para mais infomações.
+```python
+>>> Modality.PARQUES
+>>> Modality.POSTO_FIXO
+>>> Modality.POSTO_VOLANTE
+>>> Modality.DRIVE_THRU
+>>> Modality.MEGAPOSTO
+```
 
-- `Situation` - Representa as possíveis situações das filas nos postos de saúde.
-    - `Situation.NAO_FUNCIONANDO`
-    - `Situation.SEM_FILA`
-    - `Situation.FILA_PEQUENA`
-    - `Situation.FILA_MEDIA`
-    - `Situation.FILA_GRANDE`
+`District` - Representa todos os distritos do Estado de São Paulo que disponíbilizam um imunizante em seus postos. Como há muitos distritos, use a função `dir` ou `help` para mais infomações:
 
-- `Immunizing` - Representa os imunizantes disponíveis nos postos de saúde do Estado de São Paulo.
-    - `Immunizing.ASTRAZENECA`
-    - `Immunizing.INTERCAMBIALIDADE`
-    - `Immunizing.PFIZER`
-    - `Immunizing.PFIZER_PEDIATRICA`
-    - `Immunizing.CORONAVAC`
-    - `Immunizing.CORONAVAC_PEDIATRICA`
-    - `Immunizing.JANSSEN`
-    - `Immunizing.INFLUENZA`
+```python
+>>> help(District)
+>>> dir(District)
+```
+
+`Situation` - Representa as situações das filas nos postos:
+
+```python
+>>> Situation.NAO_FUNCIONANDO
+>>> Situation.SEM_FILA
+>>> Situation.FILA_PEQUENA
+>>> Situation.FILA_MEDIA
+>>> Situation.FILA_GRANDE
+```
+
+`Immunizing` - Representa os imunizantes disponíveis nos postos no Estado de São Paulo:
+
+```python
+>>> Immunizing.ASTRAZENECA
+>>> Immunizing.INTERCAMBIALIDADE
+>>> Immunizing.PFIZER
+>>> Immunizing.PFIZER_PEDIATRICA
+>>> Immunizing.CORONAVAC
+>>> Immunizing.CORONAVAC_PEDIATRICA
+>>> Immunizing.JANSSEN
+>>> Immunizing.INFLUENZA
+```
 
 
 ## Contribuições
@@ -212,11 +249,11 @@ Abaixo mostro com o que você pode contribuir:
 
 - Existe uma issue aberta e você quer resolve-la, quer implementar uma nova funcionalidade ou melhorar a documentação? Faça suas adições e me envie um *Pull Request*
 
-- Gostou do projeto, mas não quer ou ainda não consegue contribuir com ele? Considere deixar uma estrela ⭐ para o **Filômetro**
+- Gostou do projeto, mas não quer ou ainda não consegue contribuir com ele? Considere deixar uma estrela ⭐ para o **Filometro**
 
-Obrigado pelo interesse em colaborar de alguma forma com o projeto 😄
+Obrigado pelo interesse em colaborar de alguma forma com o projeto ❤
 
 
 ## Licença
 
-**Filômetro** utiliza a *licença MIT* em todo seu código, confira suas condições em [MIT License](https://github.com/matheusfelipeog/filometro/blob/master/LICENSE).
+**Filometro** utiliza a *licença MIT* em todo seu código, confira suas condições em [MIT License](https://github.com/matheusfelipeog/filometro/blob/master/LICENSE).
