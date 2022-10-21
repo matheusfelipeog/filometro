@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """
 filometro
 ---------
@@ -6,7 +5,6 @@ filometro
 Esse pacote fornece diversas formas de acessar, manipular e filtrar os dados
 de todos os postos de saúde que são mostrados no site 'De Olho na Fila'.
 """
-
 
 __all__ = [
     'Zone',
@@ -16,7 +14,7 @@ __all__ = [
     'District',
     'Filometro'
 ]
-__version__ = '0.3.0'
+__version__ = '1.0.0'
 __author__ = 'Matheus Felipe'
 
 from filometro.enums import Zone

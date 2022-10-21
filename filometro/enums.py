@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """
 filometro.enums
 ---------------
@@ -14,13 +13,12 @@ __all__ = [
     'District'
 ]
 
-from filometro import __version__
-from filometro import __author__
-
 from enum import Enum
 
 
 class Zone(Enum):
+    """Fornece todas as zonas onde há um ou mais postos disponíveis."""
+
     SUL = 'SUL'
     OESTE = 'OESTE'
     NORTE = 'NORTE'
@@ -30,6 +28,8 @@ class Zone(Enum):
 
 
 class Modality(Enum):
+    """Fornece todas as modalidades dos postos."""
+
     PARQUES = 'PARQUES'
     POSTO_FIXO = 'POSTO FIXO'
     POSTO_VOLANTE = 'POSTO VOLANTE'
@@ -38,6 +38,8 @@ class Modality(Enum):
 
 
 class Situation(Enum):
+    """Fornece todas as situações que um posto pode estar."""
+
     NAO_FUNCIONANDO = 'NÃO FUNCIONANDO'
     SEM_FILA = 'SEM FILA'
     FILA_PEQUENA = 'FILA PEQUENA'
@@ -46,6 +48,8 @@ class Situation(Enum):
 
 
 class Immunizing(Enum):
+    """Fornece todos os imunizantes disponíveis nos postos."""
+
     ASTRAZENECA = 'astrazeneca'
     INTERCAMBIALIDADE = 'intercambialidade'
     PFIZER = 'pfizer'
@@ -57,14 +61,16 @@ class Immunizing(Enum):
 
 
 class District(Enum):
+    """Fornece todos os distritos onde há um ou mais postos."""
+
     AGUA_RASA = 'Água Rasa'
     ALTO_DE_PINHEIROS = 'Alto de Pinheiros'
     ANHANGUERA = 'Anhanguera'
     ARICANDUVA = 'Aricanduva'
     ARTUR_ALVIM = 'Artur Alvim'
-    BELA_VISTA = 'Bela Vista'  
+    BELA_VISTA = 'Bela Vista'
     BELEM = 'Belém'
-    BOM_RETIRO = 'Bom Retiro'  
+    BOM_RETIRO = 'Bom Retiro'
     BRASILANDIA = 'Brasilândia'
     BRAS = 'Brás'
     BUTANTA = 'Butantã'

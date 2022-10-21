@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 import os
 import sys
 from shutil import rmtree
@@ -21,7 +19,7 @@ class PublishCommand(Command):
     @staticmethod
     def print_status(msg):
         """Prints message in bold and yellow."""
-        print('\033[1;33m{m}\033[0m'.format(m=msg))
+        print(f'\033[1;33m{msg}\033[0m')
 
     def initialize_options(self):
         pass
@@ -38,9 +36,10 @@ class PublishCommand(Command):
 
         except OSError:
             pass
-        
+
         self.print_status('Build Source and Wheel distribution…')
-        os.system('{python} setup.py sdist bdist_wheel'.format(python=sys.executable))
+        python = sys.executable
+        os.system(f'{python} setup.py sdist bdist_wheel')
 
         self.print_status('Uploading the package to PyPi via Twine…')
         os.system('twine upload --config-file .pypirc --repository pypi dist/*')
@@ -55,7 +54,7 @@ with open(os.path.join(here, 'README.md'), mode='r', encoding='utf-8') as f:
 setup(
     name='filometro',
     version=__version__,
-    description='Um wrapper Python do site "De Olho na Fila": obtenha os dados dos postos de vacinação da covid-19 em São Paulo',
+    description='Obtenha os dados dos postos de vacinação da covid-19 em São Paulo',
     long_description=long_description,
     long_description_content_type='text/markdown',
     license='MIT License',
@@ -66,8 +65,7 @@ setup(
         exclude=('tests',)
     ),
     install_requires=[
-        'requests>=2.27.1',
-        'pandas>=1.4.1'
+        'requests>=2.27.1'
     ],
     zip_safe=False,
     python_requires='>=3.7',
@@ -78,10 +76,11 @@ setup(
     },
     keywords=[
         'filometro', 'de-olho-na-fila', 'data', 'sao-paulo',
-        'covid-19', 'vacina', 'vacinasampa', 'python', 'wrapper'
+        'covid-19', 'vacina', 'vacinasampa', 'python', 'wrapper',
+        'coronavirus'
     ],
     classifiers=[
-        'Development Status :: 4 - Beta',
+        'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',
         'Intended Audience :: Information Technology',
         'License :: OSI Approved :: MIT License',

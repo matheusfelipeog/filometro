@@ -1,25 +1,31 @@
-"""
-filometro.deolhonafila
-----------------------
+"""Testes do módulo filometro.deolhonafila."""
 
-Disponíbiliza formas de ter acesso aos dados do site 'De Olho na Fila'.
-"""
+import unittest
 
-__all__ = ['APIDeOlhoNaFila']
-
-from typing import List
-
-import requests
+from filometro.deolhonafila import APIDeOlhoNaFila
 
 
-class APIDeOlhoNaFila():
-    """Um wrapper da API do site 'De Olho na Fila'."""
+class TestAPIDeOlhoNaFila(unittest.TestCase):
+    """Testes da classe APIDeOlhoNaFila."""
 
-    def __init__(self) -> None:
-        self.endpoint = 'https://deolhonafila.prefeitura.sp.gov.br/processadores/dados.php'
-        self.payload = {'dados': 'dados'}
-        self.headers = {
-            'User-Agent': (
+    def setUp(self):
+        self.api = APIDeOlhoNaFila()
+
+    def test_if_has_the_endpoint_attribute_with_the_valid_value(self):
+        valid_endpoint = 'https://deolhonafila.prefeitura.sp.gov.br/processadores/dados.php'
+
+        self.assertTrue(hasattr(self.api, 'endpoint'))
+        self.assertEqual(self.api.endpoint, valid_endpoint)
+
+    def test_if_has_the_payload_attribute_with_the_valid_value(self):
+        valid_payload = {'dados': 'dados'}
+
+        self.assertTrue(hasattr(self.api, 'payload'))
+        self.assertEqual(self.api.payload, valid_payload)
+
+    def test_if_has_the_headers_attribute_with_the_valid_value(self):
+        valid_headers = {
+            'User-Agent': (  # implicit concatenation
                 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko)'
                 'Chrome/95.0.4638.69 Safari/537.36'
             ),
@@ -43,11 +49,5 @@ class APIDeOlhoNaFila():
             'sec-gpc': '1'
         }
 
-    def get_data(self) -> List[dict]:
-        """Pegue todos os dados do site 'De Olho na Fila'."""
-
-        response = requests.post(self.endpoint, headers=self.headers, data=self.payload)
-
-        response.raise_for_status()
-
-        return response.json()
+        self.assertTrue(hasattr(self.api, 'headers'))
+        self.assertEqual(self.api.headers, valid_headers)
