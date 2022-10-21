@@ -23,6 +23,9 @@
     <a href="https://pypi.org/project/filometro/">
         <img alt="PyPI - Status" src="https://img.shields.io/pypi/status/filometro" />
     </a>
+    <a href="https://github.com/matheusfelipeog/filometro/actions/workflows/tests.yml">
+        <img alt="Tests - Status" src="https://github.com/matheusfelipeog/filometro/actions/workflows/tests.yml/badge.svg" />
+    </a>
 </p>
 
 
