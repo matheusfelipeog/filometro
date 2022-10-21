@@ -1,6 +1,6 @@
 <h1 align="center">
-    <img src="https://raw.githubusercontent.com/matheusfelipeog/filometro/master/.github/assets/images/logo.png" alt="Logo filômetro" width="100px" />
-    <br />Filômetro
+    <img src="https://raw.githubusercontent.com/matheusfelipeog/filometro/master/.github/assets/images/logo.png" alt="Logo filometro" width="100px" />
+    <br />Filometro
 </h1>
 
 <p align="center">
