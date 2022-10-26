@@ -12,8 +12,8 @@
     <a href="https://github.com/matheusfelipeog/filometro/blob/master/LICENSE">
         <img src="https://img.shields.io/github/license/matheusfelipeog/filometro" alt="License MIT" />
     </a>
-    <a href="https://pypi.org/project/filometro/">
-        <img alt="Downloads in month" src="https://img.shields.io/pypi/dm/filometro" />
+    <a href="https://pepy.tech/project/filometro">
+        <img alt="Total Downloads" src="https://pepy.tech/badge/filometro" />
     </a>
 </p>
 
