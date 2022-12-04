@@ -145,23 +145,23 @@ Sempre que precisar, utilize a função `help()` em alguma classe, objeto ou mé
 Todos os métodos tem como retorno uma lista de dados, esses dados são representados no objeto Posto. Veja quais são seus atributos:
 
 ```python
->>> posto.equipment
->>> posto.address
->>> posto.district
->>> posto.zone
->>> posto.maps
->>> posto.contacts
->>> posto.astrazeneca
->>> posto.coronavac
->>> posto.coronavac_pediatrica
->>> posto.pfizer
->>> posto.pfizer_pediatrica
->>> posto.janssen
->>> posto.influenza
->>> posto.intercambialidade
->>> posto.situation
->>> posto.modality
->>> posto.last_update
+>>> posto.equipment             # Equipamento da unidade.
+>>> posto.address               # Endereço onde está localizado.
+>>> posto.district              # Distrito onde está localizado.
+>>> posto.zone                  # Zona onde está localizado.
+>>> posto.maps                  # Um link do Google Maps para o endereço.
+>>> posto.contacts              # Uma lista de contatos, se houver.
+>>> posto.astrazeneca           # '0' ou '1' caso astrazeneca não esteja ou esteja disponível.
+>>> posto.coronavac             # '0' ou '1' caso coronavac não esteja ou esteja disponível.
+>>> posto.coronavac_pediatrica  # '0' ou '1' caso coronavac pediátrica não esteja ou esteja disponível.
+>>> posto.pfizer                # '0' ou '1' caso pfizer não esteja ou esteja disponível.
+>>> posto.pfizer_pediatrica     # '0' ou '1' caso pfizer pediátrica não esteja ou esteja disponível.
+>>> posto.janssen               # '0' ou '1' caso janssen não esteja ou esteja disponível.
+>>> posto.influenza             # '0' ou '1' caso influenza não esteja ou esteja disponível.
+>>> posto.intercambialidade     # '0' ou '1' caso intercambialidade não esteja ou esteja disponível.
+>>> posto.situation             # A última atualização da situação da fila.
+>>> posto.modality              # A modalidade da unidade.
+>>> posto.last_update           # Data e hora da última atualização no formato AAAA-MM-DD HH:MM:SS.MS.
 ```
 
 ### Métodos da classe Filometro
