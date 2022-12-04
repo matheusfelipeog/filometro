@@ -34,6 +34,7 @@ def _posto_factory(data: dict) -> Posto:
         coronavac=data['coronavac'],
         coronavac_pediatrica=data['corona_ped'],
         pfizer=data['pfizer'],
+        pfizer_baby=data['pfizer_baby'],
         pfizer_pediatrica=data['pfizer_ped'],
         janssen=data['janssen'],
         influenza=data['influenza'],
