@@ -9,5 +9,3 @@ requests = ">=2.27.1"
 [dev-packages]
 pylint = "*"
 
-[requires]
-python_version = "3.8"
