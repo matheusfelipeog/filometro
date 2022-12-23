@@ -156,6 +156,7 @@ Todos os métodos tem como retorno uma lista de dados, esses dados são represen
 >>> posto.coronavac_pediatrica  # '0' ou '1' caso coronavac pediátrica não esteja ou esteja disponível.
 >>> posto.pfizer                # '0' ou '1' caso pfizer não esteja ou esteja disponível.
 >>> posto.pfizer_baby           # '0' ou '1' caso pfizer baby não esteja ou esteja disponível.
+>>> posto.pfizer_bivalente      # '0' ou '1' caso pfizer bivalente não esteja ou esteja disponível.
 >>> posto.pfizer_pediatrica     # '0' ou '1' caso pfizer pediátrica não esteja ou esteja disponível.
 >>> posto.janssen               # '0' ou '1' caso janssen não esteja ou esteja disponível.
 >>> posto.influenza             # '0' ou '1' caso influenza não esteja ou esteja disponível.
@@ -233,6 +234,7 @@ Todos os identificadores estão disponíveis para uso atráves da interface prí
 >>> Immunizing.INTERCAMBIALIDADE
 >>> Immunizing.PFIZER
 >>> Immunizing.PFIZER_BABY
+>>> Immunizing.PFIZER_BIVALENTE
 >>> Immunizing.PFIZER_PEDIATRICA
 >>> Immunizing.CORONAVAC
 >>> Immunizing.CORONAVAC_PEDIATRICA

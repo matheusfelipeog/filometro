@@ -54,6 +54,7 @@ class Immunizing(Enum):
     INTERCAMBIALIDADE = 'intercambialidade'
     PFIZER = 'pfizer'
     PFIZER_BABY = 'pfizer_baby'
+    PFIZER_BIVALENTE = 'pfizer_bivalente'
     PFIZER_PEDIATRICA = 'pfizer_pediatrica'
     CORONAVAC = 'coronavac'
     CORONAVAC_PEDIATRICA = 'coronavac_pediatrica'
