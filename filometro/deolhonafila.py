@@ -55,7 +55,8 @@ class APIDeOlhoNaFila():
         response = requests.post(
             self.endpoint,
             headers=self.headers,
-            data=self.payload
+            data=self.payload,
+            timeout=15
         )
 
         response.raise_for_status()
