@@ -11,6 +11,8 @@ from typing import List
 
 import requests
 
+from filometro.exceptions import DataCollectionError
+
 
 class APIDeOlhoNaFila():
     """Um wrapper da API do site 'De Olho na Fila'."""
@@ -52,13 +54,22 @@ class APIDeOlhoNaFila():
     def get_data(self) -> List[dict]:
         """Pegue todos os dados do site 'De Olho na Fila'."""
 
-        response = requests.post(
-            self.endpoint,
-            headers=self.headers,
-            data=self.payload,
-            timeout=15
-        )
+        data = []
+        try:
+            response = requests.post(
+                self.endpoint,
+                headers=self.headers,
+                data=self.payload,
+                timeout=15
+            )
 
-        response.raise_for_status()
+            response.raise_for_status()
 
-        return response.json()
+            data = response.json()
+
+        except (requests.Timeout, requests.HTTPError) as err:
+            raise DataCollectionError(
+                'Não foi possível coletar os dados no site "De Olho na Fila".'
+            ) from err
+
+        return data
