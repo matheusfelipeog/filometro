@@ -7,7 +7,7 @@ Fornece a API pública principal do pacote.
 
 __all__ = ['Filometro']
 
-from typing import List
+from typing import List, Union
 
 from dataclasses import asdict
 
@@ -63,7 +63,7 @@ class Filometro():
     Fornence os métodos para coletar e filtrar os dados dos postos.
     """
 
-    def __init__(self, _api: APIDeOlhoNaFila = None) -> None:
+    def __init__(self, _api: Union[APIDeOlhoNaFila, None] = None) -> None:
         self._api = _api or APIDeOlhoNaFila()
 
         self._postos = self._load_postos()
