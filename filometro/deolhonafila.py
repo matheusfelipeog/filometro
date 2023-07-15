@@ -2,7 +2,7 @@
 filometro.deolhonafila
 ----------------------
 
-Disponíbiliza formas de ter acesso aos dados do site 'De Olho na Fila'.
+Disponibiliza formas de ter acesso aos dados do site 'De Olho na Fila'.
 """
 
 __all__ = ['APIDeOlhoNaFila']
