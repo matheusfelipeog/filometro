@@ -12,7 +12,10 @@ class TestAPIDeOlhoNaFila(unittest.TestCase):
         self.api = APIDeOlhoNaFila()
 
     def test_if_has_the_endpoint_attribute_with_the_valid_value(self):
-        valid_endpoint = 'https://deolhonafila.prefeitura.sp.gov.br/processadores/dados.php'
+        valid_endpoint = (
+            'https://deolhonafila.prefeitura.sp.gov.br'
+            '/processadores/dados.php'
+        )
 
         self.assertTrue(hasattr(self.api, 'endpoint'))
         self.assertEqual(self.api.endpoint, valid_endpoint)
@@ -25,14 +28,17 @@ class TestAPIDeOlhoNaFila(unittest.TestCase):
 
     def test_if_has_the_headers_attribute_with_the_valid_value(self):
         valid_headers = {
-            'User-Agent': (  # implicit concatenation
-                'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko)'
-                'Chrome/95.0.4638.69 Safari/537.36'
+            'User-Agent': (
+                'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+                '(KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36'
             ),
             'Host': 'deolhonafila.prefeitura.sp.gov.br',
             'Connection': 'keep-alive',
             'Content-Length': '11',
-            'sec-ch-ua': '"Google Chrome";v="95", "Chromium";v="95", ";Not A Brand";v="99"',
+            'sec-ch-ua': (
+                '"Google Chrome";v="95", "Chromium";'
+                'v="95", ";Not A Brand";v="99"'
+            ),
             'Accept': 'application/json, text/javascript, */*; q=0.01',
             'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
             'X-Requested-With': 'XMLHttpRequest',
