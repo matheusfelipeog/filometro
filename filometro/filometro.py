@@ -40,6 +40,7 @@ def _posto_factory(data: dict) -> Posto:
         janssen=data['janssen'],
         influenza=data['influenza'],
         intercambialidade=data['intercambialidade'],
+        dengue=data['dengue'],
         situation=data['status_fila'],
         modality=data['tipo_posto'],
         last_update=data['data_hora'],

@@ -35,6 +35,7 @@ class Posto():
     janssen: str = field(repr=False)
     influenza: str = field(repr=False)
     intercambialidade: str = field(repr=False)
+    dengue: str = field(repr=False)
     situation: str = field(repr=False)           # status_fila
     modality: str = field(repr=False)            # tipo_posto
     last_update: str                             # data_hora
