@@ -60,6 +60,7 @@ class Immunizing(Enum):
     CORONAVAC_PEDIATRICA = 'coronavac_pediatrica'
     JANSSEN = 'janssen'
     INFLUENZA = 'influenza'
+    DENGUE = 'dengue'
 
 
 class District(Enum):

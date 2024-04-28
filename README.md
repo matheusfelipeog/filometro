@@ -161,6 +161,7 @@ Todos os métodos tem como retorno uma lista de dados, esses dados são represen
 >>> posto.janssen               # '0' ou '1' caso janssen não esteja ou esteja disponível.
 >>> posto.influenza             # '0' ou '1' caso influenza não esteja ou esteja disponível.
 >>> posto.intercambialidade     # '0' ou '1' caso intercambialidade não esteja ou esteja disponível.
+>>> posto.dengue                # '0' ou '1' caso dengue não esteja ou esteja disponível.
 >>> posto.situation             # A última atualização da situação da fila.
 >>> posto.modality              # A modalidade da unidade.
 >>> posto.last_update           # Data e hora da última atualização no formato AAAA-MM-DD HH:MM:SS.MS.
@@ -240,6 +241,7 @@ Todos os identificadores estão disponíveis para uso atráves da interface prí
 >>> Immunizing.CORONAVAC_PEDIATRICA
 >>> Immunizing.JANSSEN
 >>> Immunizing.INFLUENZA
+>>> Immunizing.DENGUE
 ```
 
 
